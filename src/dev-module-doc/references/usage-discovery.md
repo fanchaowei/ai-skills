@@ -1,32 +1,23 @@
-# Usage Discovery
+﻿# Usage Example Guidance
 
 ## 目标
 
-生成文档前主动搜索真实使用方，确保使用示例和使用场景基于代码事实。
+基于模块的公开导出、真实组件契约和显式类型，整理最小使用示例。示例用于帮助开发人员理解接入方式，不展示仓库中的真实使用方。
 
-## 搜索策略
+## 示例来源
 
-优先使用 `rg`。
+优先依据：
 
-搜索内容：
+- 公开导出的函数、类型、常量、组件名。
+- `props`、`emits`、`slots`、`defineExpose` 等组件契约。
+- store id、state、getters、actions。
+- composable 函数签名和返回值。
+- service/API 方法签名、请求参数和响应类型。
 
-- 模块文件名。
-- 导出的函数、类型、常量、组件名。
-- import 路径。
-- store id。
-- composable 函数名。
-- service 方法名。
+## 示例要求
 
-## 示例命令
-
-```powershell
-rg "useManageWorkspaceStore" apps packages src
-rg "serviceApiRegistry|registerServiceApi" apps packages src
-rg "from ['\"].*service-api-registry" apps packages src
-```
-
-## 结果使用
-
-- 找到真实使用方时，优先从真实调用中整理最小示例。
-- 没有找到使用方时，基于公开导出生成最小示例，并说明当前仓库未搜索到明确使用方。
-- 使用方与导出契约冲突时，以代码导出为准，并在注意事项中说明冲突。
+- 使用真实存在的导出和类型。
+- 保持最小、可参考，不扩展成完整业务代码。
+- 不编写或引用“真实使用方示例”。
+- 不为了示例专门搜索仓库调用方。
+- 当公开契约不足以生成可靠示例时，说明缺少的信息，不编造参数、返回值或调用链。
