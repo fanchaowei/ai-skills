@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "App Project Overview Doc"
+  short_description: "Create concise AI onboarding PROJECT.md files for apps."
+  default_prompt: "Use $app-project-overview-doc to create or update an app-level claudedocs/PROJECT.md overview."
