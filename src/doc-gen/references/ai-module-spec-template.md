@@ -101,6 +101,8 @@ composable_contract:
 
 ## Body
 
+简单模块如果没有可靠排查链路，保留 `问题排查路径` 标题，并用一句话说明未生成具体步骤，原因写入 `待确认项`。
+
 ```markdown
 # {{MODULE_NAME}} - {{MODULE_TYPE_DESC}}
 

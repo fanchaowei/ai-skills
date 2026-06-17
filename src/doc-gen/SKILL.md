@@ -71,7 +71,7 @@ metadata:
 - YAML 必须包含 `read_order.quick_edit`、`read_order.architecture`、`read_order.debugging`。
 - 正文前半部分必须包含 `AI 快速接手` 和 `AI 修改守则`。
 - 关键风险点使用 `[代码确认]`、`[测试验证]`、`[推断]`、`[待确认]` 标注。
-- 简单模块可以省略 `问题排查路径` 和 Mermaid 图。
+- 简单模块可以不生成具体排查步骤和 Mermaid 图；若 `read_order.debugging` 指向 `问题排查路径`，正文保留短章节说明原因。
 - 排查路径和 Mermaid 图只能基于代码、测试或明确调用链生成。
 - 旧文档采用渐进迁移，只有用户明确要求更新格式时才整体改写。
 

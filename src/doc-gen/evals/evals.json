@@ -25,6 +25,7 @@
     "YAML contains read_order.quick_edit, architecture, and debugging",
     "Body contains AI 快速接手 and AI 修改守则 near the top",
     "Verified behavior includes test files, commands, and proves statements",
+    "Service modules include service_contract or an equivalent service-specific contract section",
     "Unconfirmed debugging paths are not invented and appear in 待确认项"
   ]
 }

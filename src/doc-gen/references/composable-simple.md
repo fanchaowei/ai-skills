@@ -52,6 +52,10 @@
 
 {{CHANGE_GUIDE}}
 
+## 问题排查路径
+
+{{DEBUGGING_PATHS}}
+
 ## 待确认项
 
 {{OPEN_QUESTIONS}}

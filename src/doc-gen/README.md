@@ -63,9 +63,10 @@ apps/config-manage-system/claudedocs/modules/RouteCachedPage.md
 1. **综合模块** - 多文件组合（组件 + hooks + utils）
 2. **Vue 组件** - 单个或简单组件
 3. **Pinia Store** - 状态管理
-4. **Composables/Hooks** - 组合式函数
-5. **工具函数** - 纯函数工具
-6. **视图页面** - 路由级别组件
+4. **Service/API** - 请求实例、API 工厂、上下文注入
+5. **Composables/Hooks** - 组合式函数
+6. **工具函数** - 纯函数工具
+7. **视图页面** - 路由级别组件
 
 ## AI 渐进读取格式
 

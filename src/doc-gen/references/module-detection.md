@@ -15,11 +15,12 @@
 | `complex-module` | 文件数大于 5，或同时包含 Vue、TS、样式、hooks/utils |
 | `component` | 主文件是 `.vue` 且位于 `components/` |
 | `store` | 路径包含 `store/` 或代码包含 `defineStore` |
+| `service` | 路径包含 `services/`、`service/`、`api/`，或代码包含请求实例、API 工厂、context provider |
 | `composable` | 路径包含 `composables/` 或 `hooks/`，文件名以 `use` 开头 |
 | `utility` | 路径包含 `utils/` 或 `helpers/`，导出函数或常量 |
 | `view` | 路径包含 `views/` 且主文件是 `.vue` |
 
-识别优先级：`complex-module` > `component` > `store` > `composable` > `utility` > `view`。如果多个类型同时命中，优先选择更具体、更能描述修改入口的类型。
+识别优先级：`complex-module` > `component` > `store` > `service` > `composable` > `utility` > `view`。如果多个类型同时命中，优先选择更具体、更能描述修改入口的类型。
 
 ## 复杂度
 
