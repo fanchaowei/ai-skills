@@ -2,7 +2,7 @@
 
 ## 功能
 
-智能分析 Vue 3 + TypeScript 项目中的代码模块，生成易于 AI 阅读的结构化模块文档。支持 monorepo 与非 monorepo 项目。
+智能分析 Vue 3 + TypeScript 项目中的代码模块，生成面向 AI 渐进读取的 `ai-module-spec` 模块规格文档。支持 monorepo 与非 monorepo 项目。
 
 ## 使用方法
 
@@ -67,6 +67,14 @@ apps/config-manage-system/claudedocs/modules/RouteCachedPage.md
 5. **工具函数** - 纯函数工具
 6. **视图页面** - 路由级别组件
 
+## AI 渐进读取格式
+
+新生成模块文档默认使用 `ai-module-spec` 格式。YAML frontmatter 是导航层，正文是解释层。AI 可以先读取 YAML 中的 `read_order`，再根据任务类型选择阅读 `quick_edit`、`architecture` 或 `debugging` 对应章节。
+
+## 旧文档迁移
+
+旧文档采用渐进迁移。只有用户明确要求更新、重写、升级格式或按新模板整理时，才将旧文档整体迁移到 `ai-module-spec`。普通补充场景优先尊重原结构。
+
 ## 输出
 
 ### Monorepo
@@ -90,12 +98,9 @@ apps/config-manage-system/claudedocs/modules/RouteCachedPage.md
 
 生成的文档包含（根据模块复杂度自适应）：
 
-- 模块概述
-- 架构设计
-- 核心功能
-- 数据结构
-- API 接口
-- Props & Events
-- 已知问题
-- 性能优化
-- AI 使用提示
+- YAML frontmatter 与 `read_order`
+- 模块概述、AI 快速接手、AI 修改守则
+- 模块边界、当前实现契约、核心流程、依赖关系
+- 影响范围、已验证行为、修改指南
+- 基于代码或测试确认的问题排查路径
+- 待确认项与文档维护信息

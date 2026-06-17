@@ -1,35 +1,61 @@
 # {{MODULE_NAME}} - 工具函数
 
-**文件路径**: `{{MAIN_FILE_PATH}}`
-**最后分析**: {{ANALYSIS_DATE}}
-**文档版本**: 1.0.0
+简单工具函数模板。保持关键签名和示例短小；默认省略 `问题排查路径` 和 Mermaid。
 
----
+## 模块概述
 
-## 📋 模块概述
+{{MODULE_OVERVIEW}}
 
-{{MODULE_SUMMARY}}
+## AI 快速接手
 
-**核心职责**:
-{{CORE_RESPONSIBILITIES}}
+{{AI_QUICK_HANDOFF}}
 
-**技术栈**:
-{{TECH_STACK}}
+## AI 修改守则
 
----
+{{AI_CHANGE_RULES}}
 
-## 🔧 函数列表
+## 模块边界
 
-{{FUNCTION_LIST}}
+{{MODULE_BOUNDARY}}
 
----
+## 当前实现契约
 
-## 💡 使用示例
+### 公开签名
 
-{{USAGE_EXAMPLES}}
+{{PUBLIC_SIGNATURES}}
 
----
+### 输入
 
-## 💡 AI 使用提示
+{{INPUTS}}
 
-{{AI_TIPS}}
+### 输出
+
+{{OUTPUTS}}
+
+### 副作用
+
+{{SIDE_EFFECTS}}
+
+## 依赖关系
+
+{{DEPENDENCIES}}
+
+## 影响范围
+
+{{IMPACT_SCOPE}}
+
+## 已验证行为
+
+{{VERIFIED_BEHAVIORS}}
+
+## 修改指南
+
+{{CHANGE_GUIDE}}
+
+## 待确认项
+
+{{OPEN_QUESTIONS}}
+
+## 文档维护信息
+
+{{MAINTENANCE_INFO}}

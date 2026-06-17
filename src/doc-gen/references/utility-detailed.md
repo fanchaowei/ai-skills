@@ -1,53 +1,69 @@
 # {{MODULE_NAME}} - 工具函数
 
-**文件路径**: `{{MAIN_FILE_PATH}}`
-**最后分析**: {{ANALYSIS_DATE}}
-**文档版本**: 1.0.0
+详细工具模块模板。用于包含多函数、类型约束、边界处理或重要兼容性的工具目录。
 
----
+## 模块概述
 
-## 📋 模块概述
+{{MODULE_OVERVIEW}}
 
-{{MODULE_SUMMARY}}
+## AI 快速接手
 
-**核心职责**:
-{{CORE_RESPONSIBILITIES}}
+{{AI_QUICK_HANDOFF}}
 
-**技术栈**:
-{{TECH_STACK}}
+## AI 修改守则
 
----
+{{AI_CHANGE_RULES}}
 
-## 🏗️ 模块结构
+## 模块边界
 
-{{MODULE_STRUCTURE}}
+{{MODULE_BOUNDARY}}
 
----
+## 当前实现契约
 
-## 🔧 核心函数
+### 公开签名
 
-{{CORE_FUNCTIONS}}
+{{PUBLIC_SIGNATURES}}
 
----
+### 输入
 
-## 📊 类型定义
+{{INPUTS}}
 
-{{TYPE_DEFINITIONS}}
+### 输出
 
----
+{{OUTPUTS}}
 
-## 💡 使用示例
+### 副作用
 
-{{USAGE_EXAMPLES}}
+{{SIDE_EFFECTS}}
 
----
+## 核心流程
 
-## ⚠️ 注意事项
+{{CORE_FLOW}}
 
-{{NOTES}}
+## 依赖关系
 
----
+{{DEPENDENCIES}}
 
-## 💡 AI 使用提示
+## 影响范围
 
-{{AI_TIPS}}
+{{CHANGE_IMPACT_MATRIX}}
+
+## 已验证行为
+
+{{VERIFIED_BEHAVIORS}}
+
+## 修改指南
+
+{{CHANGE_GUIDE}}
+
+## 问题排查路径
+
+{{DEBUGGING_PATHS}}
+
+## 待确认项
+
+{{OPEN_QUESTIONS}}
+
+## 文档维护信息
+
+{{MAINTENANCE_INFO}}

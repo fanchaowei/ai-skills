@@ -1,48 +1,30 @@
 # {{MODULE_NAME}} - Vue 组件
 
-**文件路径**: `{{MAIN_FILE_PATH}}`
-**最后分析**: {{ANALYSIS_DATE}}
-**文档版本**: 1.0.0
+详细组件模板。用于组件组、复杂交互组件或对外暴露较多契约的组件模块。
 
----
+## 模块概述
 
-## 📋 模块概述
+{{MODULE_OVERVIEW}}
 
-{{MODULE_SUMMARY}}
+## AI 快速接手
 
-**核心职责**:
-{{CORE_RESPONSIBILITIES}}
+{{AI_QUICK_HANDOFF}}
 
-**技术栈**:
-{{TECH_STACK}}
+## AI 修改守则
 
----
+{{AI_CHANGE_RULES}}
 
-## 🏗️ 组件结构
+## 模块边界
 
-{{COMPONENT_STRUCTURE}}
+{{MODULE_BOUNDARY}}
 
----
-
-## 🔧 核心功能模块
-
-{{CORE_FEATURES}}
-
----
-
-## 📊 数据结构
-
-{{DATA_STRUCTURES}}
-
----
-
-## 🎯 组件接口
+## 当前实现契约
 
 ### Props
 
 {{PROPS}}
 
-### Events
+### Emits
 
 {{EVENTS}}
 
@@ -50,24 +32,40 @@
 
 {{SLOTS}}
 
-### Expose 方法
+### Expose
 
 {{EXPOSE_METHODS}}
 
----
+## 核心流程
 
-## ⚠️ 已知问题
+{{MERMAID_FLOW}}
 
-{{KNOWN_ISSUES}}
+{{FLOW_EXPLANATION}}
 
----
+## 依赖关系
 
-## 🔗 相关文件
+{{DEPENDENCIES}}
 
-{{FILE_INDEX}}
+## 影响范围
 
----
+{{CHANGE_IMPACT_MATRIX}}
 
-## 💡 AI 使用提示
+## 已验证行为
 
-{{AI_TIPS}}
+{{VERIFIED_BEHAVIORS}}
+
+## 修改指南
+
+{{CHANGE_GUIDE}}
+
+## 问题排查路径
+
+{{DEBUGGING_PATHS}}
+
+## 待确认项
+
+{{OPEN_QUESTIONS}}
+
+## 文档维护信息
+
+{{MAINTENANCE_INFO}}

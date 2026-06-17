@@ -1,47 +1,61 @@
 # {{MODULE_NAME}} - Composable/Hook
 
-**文件路径**: `{{MAIN_FILE_PATH}}`
-**最后分析**: {{ANALYSIS_DATE}}
-**文档版本**: 1.0.0
+简单 composable 模板。重点呈现参数、返回值、副作用、修改入口和验证方式。
 
----
+## 模块概述
 
-## 📋 模块概述
+{{MODULE_OVERVIEW}}
 
-{{MODULE_SUMMARY}}
+## AI 快速接手
 
-**核心职责**:
-{{CORE_RESPONSIBILITIES}}
+{{AI_QUICK_HANDOFF}}
 
-**技术栈**:
-{{TECH_STACK}}
+## AI 修改守则
 
----
+{{AI_CHANGE_RULES}}
 
-## 🔧 函数签名
+## 模块边界
 
-{{FUNCTION_SIGNATURE}}
+{{MODULE_BOUNDARY}}
 
----
+## 当前实现契约
 
-## 📊 参数说明
+### 参数
 
 {{PARAMETERS}}
 
----
+### 返回值
 
-## 📤 返回值
+{{RETURNS}}
 
-{{RETURN_VALUE}}
+### 副作用
 
----
+{{SIDE_EFFECTS}}
 
-## 💡 使用示例
+## 核心流程
 
-{{USAGE_EXAMPLES}}
+{{CORE_FLOW}}
 
----
+## 依赖关系
 
-## 💡 AI 使用提示
+{{DEPENDENCIES}}
 
-{{AI_TIPS}}
+## 影响范围
+
+{{IMPACT_SCOPE}}
+
+## 已验证行为
+
+{{VERIFIED_BEHAVIORS}}
+
+## 修改指南
+
+{{CHANGE_GUIDE}}
+
+## 待确认项
+
+{{OPEN_QUESTIONS}}
+
+## 文档维护信息
+
+{{MAINTENANCE_INFO}}

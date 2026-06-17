@@ -1,53 +1,69 @@
 # {{MODULE_NAME}} - 视图页面
 
-**文件路径**: `{{MAIN_FILE_PATH}}`
-**最后分析**: {{ANALYSIS_DATE}}
-**文档版本**: 1.0.0
+标准视图模板。用于路由级 Vue 页面，必须呈现路由信息、页面状态、API 调用、子组件和验证映射。
 
----
+## 模块概述
 
-## 📋 模块概述
+{{MODULE_OVERVIEW}}
 
-{{MODULE_SUMMARY}}
+## AI 快速接手
 
-**核心职责**:
-{{CORE_RESPONSIBILITIES}}
+{{AI_QUICK_HANDOFF}}
 
-**技术栈**:
-{{TECH_STACK}}
+## AI 修改守则
 
----
+{{AI_CHANGE_RULES}}
 
-## 🏗️ 页面结构
+## 模块边界
 
-{{PAGE_STRUCTURE}}
+{{MODULE_BOUNDARY}}
 
----
+## 当前实现契约
 
-## 🔧 核心功能
-
-{{CORE_FEATURES}}
-
----
-
-## 📊 状态管理
-
-{{STATE_MANAGEMENT}}
-
----
-
-## 🔌 API 调用
-
-{{API_CALLS}}
-
----
-
-## 🎯 路由信息
+### 路由信息
 
 {{ROUTE_INFO}}
 
----
+### 页面状态
 
-## 💡 AI 使用提示
+{{PAGE_STATE}}
 
-{{AI_TIPS}}
+### API 调用
+
+{{API_CALLS}}
+
+### 子组件
+
+{{CHILD_COMPONENTS}}
+
+## 核心流程
+
+{{CORE_FLOW}}
+
+## 依赖关系
+
+{{DEPENDENCIES}}
+
+## 影响范围
+
+{{IMPACT_SCOPE}}
+
+## 已验证行为
+
+{{VERIFIED_BEHAVIORS}}
+
+## 修改指南
+
+{{CHANGE_GUIDE}}
+
+## 问题排查路径
+
+{{DEBUGGING_PATHS}}
+
+## 待确认项
+
+{{OPEN_QUESTIONS}}
+
+## 文档维护信息
+
+{{MAINTENANCE_INFO}}

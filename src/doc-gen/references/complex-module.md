@@ -1,112 +1,57 @@
 # {{MODULE_NAME}} - {{MODULE_TYPE_DESC}}
 
-**文件路径**: `{{MAIN_FILE_PATH}}`
-**最后分析**: {{ANALYSIS_DATE}}
-**分析者**: Claude Sonnet 4.5
-**文档版本**: 1.0.0
+适用于跨文件、跨上下文、状态流或请求链路较复杂的模块。必须优先读取 `ai-module-spec-template.md`，再使用本模板补充复杂模块特有的流程、影响矩阵和排查路径。
 
----
+## 模块概述
 
-## 📋 模块概述
+{{MODULE_OVERVIEW}}
 
-{{MODULE_SUMMARY}}
+## AI 快速接手
 
-**核心职责**:
-{{CORE_RESPONSIBILITIES}}
+{{AI_QUICK_HANDOFF}}
 
-**技术栈**:
-{{TECH_STACK}}
+## AI 修改守则
 
----
+{{AI_CHANGE_RULES}}
 
-## 🏗️ 架构设计
+## 模块边界
 
-### 依赖图
+{{MODULE_BOUNDARY}}
 
-{{DEPENDENCY_DIAGRAM}}
+## 当前实现契约
 
-### 数据流向
+{{IMPLEMENTATION_CONTRACT}}
 
-{{DATA_FLOW}}
+## 核心流程
 
----
+{{MERMAID_FLOW}}
 
-## 🔧 核心功能模块
+{{FLOW_EXPLANATION}}
 
-{{CORE_FEATURES}}
+## 依赖关系
 
----
+{{DEPENDENCIES}}
 
-## 📊 数据结构
+## 影响范围
 
-{{DATA_STRUCTURES}}
+{{CHANGE_IMPACT_MATRIX}}
 
----
+## 已验证行为
 
-## 🎨 样式配置
+{{VERIFIED_BEHAVIORS}}
 
-{{STYLE_CONFIG}}
+## 修改指南
 
----
+{{CHANGE_GUIDE}}
 
-## 🔌 API 接口
+## 问题排查路径
 
-{{API_INTERFACES}}
+{{DEBUGGING_PATHS}}
 
----
+## 待确认项
 
-## 🎯 Props & Events
+{{OPEN_QUESTIONS}}
 
-### Props
+## 文档维护信息
 
-{{PROPS}}
-
-### Events
-
-{{EVENTS}}
-
-### Slots
-
-{{SLOTS}}
-
-### Expose 方法
-
-{{EXPOSE_METHODS}}
-
----
-
-## ⚠️ 已知问题 & TODO
-
-{{KNOWN_ISSUES}}
-
----
-
-## 🚀 性能优化
-
-{{PERFORMANCE_OPTIMIZATIONS}}
-
----
-
-## 🔄 扩展指南
-
-{{EXTENSION_GUIDE}}
-
----
-
-## 📝 修改历史
-
-| 日期 | 版本 | 修改内容 | 修改人 |
-|------|------|----------|--------|
-| {{ANALYSIS_DATE}} | 1.0.0 | 初始分析文档创建 | Claude Sonnet 4.5 |
-
----
-
-## 🔗 相关文件索引
-
-{{FILE_INDEX}}
-
----
-
-## 💡 AI 使用提示
-
-{{AI_TIPS}}
+{{MAINTENANCE_INFO}}

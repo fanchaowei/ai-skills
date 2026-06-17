@@ -1,47 +1,67 @@
 # {{MODULE_NAME}} - Composable/Hook
 
-**文件路径**: `{{MAIN_FILE_PATH}}`
-**最后分析**: {{ANALYSIS_DATE}}
-**文档版本**: 1.0.0
+详细 composable 模板。用于包含多个内部 hook、事件监听、请求链路或复杂状态派生的模块。
 
----
+## 模块概述
 
-## 📋 模块概述
+{{MODULE_OVERVIEW}}
 
-{{MODULE_SUMMARY}}
+## AI 快速接手
 
-**核心职责**:
-{{CORE_RESPONSIBILITIES}}
+{{AI_QUICK_HANDOFF}}
 
-**技术栈**:
-{{TECH_STACK}}
+## AI 修改守则
 
----
+{{AI_CHANGE_RULES}}
 
-## 🏗️ Hooks 依赖关系
+## 模块边界
 
-{{HOOKS_DEPENDENCY}}
+{{MODULE_BOUNDARY}}
 
----
+## 当前实现契约
 
-## 🔧 核心 Hooks
+### 参数
 
-{{CORE_HOOKS}}
+{{PARAMETERS}}
 
----
+### 返回值
 
-## 📊 数据流
+{{RETURNS}}
 
-{{DATA_FLOW}}
+### 副作用
 
----
+{{SIDE_EFFECTS}}
 
-## 💡 使用示例
+## 核心流程
 
-{{USAGE_EXAMPLES}}
+{{MERMAID_FLOW}}
 
----
+{{FLOW_EXPLANATION}}
 
-## 💡 AI 使用提示
+## 依赖关系
 
-{{AI_TIPS}}
+{{DEPENDENCIES}}
+
+## 影响范围
+
+{{CHANGE_IMPACT_MATRIX}}
+
+## 已验证行为
+
+{{VERIFIED_BEHAVIORS}}
+
+## 修改指南
+
+{{CHANGE_GUIDE}}
+
+## 问题排查路径
+
+{{DEBUGGING_PATHS}}
+
+## 待确认项
+
+{{OPEN_QUESTIONS}}
+
+## 文档维护信息
+
+{{MAINTENANCE_INFO}}

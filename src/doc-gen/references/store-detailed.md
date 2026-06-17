@@ -1,30 +1,24 @@
 # {{MODULE_NAME}} - Pinia Store
 
-**文件路径**: `{{MAIN_FILE_PATH}}`
-**最后分析**: {{ANALYSIS_DATE}}
-**文档版本**: 1.0.0
+详细 store 模板。用于包含复杂 action、副作用、请求依赖或跨模块状态联动的 store。
 
----
+## 模块概述
 
-## 📋 模块概述
+{{MODULE_OVERVIEW}}
 
-{{MODULE_SUMMARY}}
+## AI 快速接手
 
-**核心职责**:
-{{CORE_RESPONSIBILITIES}}
+{{AI_QUICK_HANDOFF}}
 
-**技术栈**:
-{{TECH_STACK}}
+## AI 修改守则
 
----
+{{AI_CHANGE_RULES}}
 
-## 🏗️ Store 架构
+## 模块边界
 
-{{STORE_ARCHITECTURE}}
+{{MODULE_BOUNDARY}}
 
----
-
-## 📊 状态定义
+## 当前实现契约
 
 ### State
 
@@ -38,32 +32,36 @@
 
 {{ACTIONS}}
 
----
+## 核心流程
 
-## 🔄 数据流向
+{{MERMAID_FLOW}}
 
-{{DATA_FLOW}}
+{{FLOW_EXPLANATION}}
 
----
+## 依赖关系
 
-## 🔌 API 集成
+{{DEPENDENCIES}}
 
-{{API_INTEGRATION}}
+## 影响范围
 
----
+{{CHANGE_IMPACT_MATRIX}}
 
-## 🎯 使用示例
+## 已验证行为
 
-{{USAGE_EXAMPLES}}
+{{VERIFIED_BEHAVIORS}}
 
----
+## 修改指南
 
-## ⚠️ 已知问题
+{{CHANGE_GUIDE}}
 
-{{KNOWN_ISSUES}}
+## 问题排查路径
 
----
+{{DEBUGGING_PATHS}}
 
-## 💡 AI 使用提示
+## 待确认项
 
-{{AI_TIPS}}
+{{OPEN_QUESTIONS}}
+
+## 文档维护信息
+
+{{MAINTENANCE_INFO}}

@@ -1,24 +1,24 @@
 # {{MODULE_NAME}} - Pinia Store
 
-**文件路径**: `{{MAIN_FILE_PATH}}`
-**最后分析**: {{ANALYSIS_DATE}}
-**文档版本**: 1.0.0
+简单 store 模板。重点记录 state/getters/actions 契约、状态流和 action 改动影响。
 
----
+## 模块概述
 
-## 📋 模块概述
+{{MODULE_OVERVIEW}}
 
-{{MODULE_SUMMARY}}
+## AI 快速接手
 
-**核心职责**:
-{{CORE_RESPONSIBILITIES}}
+{{AI_QUICK_HANDOFF}}
 
-**技术栈**:
-{{TECH_STACK}}
+## AI 修改守则
 
----
+{{AI_CHANGE_RULES}}
 
-## 📊 状态定义
+## 模块边界
+
+{{MODULE_BOUNDARY}}
+
+## 当前实现契约
 
 ### State
 
@@ -32,14 +32,30 @@
 
 {{ACTIONS}}
 
----
+## 核心流程
 
-## 🔌 API 集成
+{{STATE_FLOW}}
 
-{{API_INTEGRATION}}
+## 依赖关系
 
----
+{{DEPENDENCIES}}
 
-## 💡 AI 使用提示
+## 影响范围
 
-{{AI_TIPS}}
+{{IMPACT_SCOPE}}
+
+## 已验证行为
+
+{{VERIFIED_BEHAVIORS}}
+
+## 修改指南
+
+{{CHANGE_GUIDE}}
+
+## 待确认项
+
+{{OPEN_QUESTIONS}}
+
+## 文档维护信息
+
+{{MAINTENANCE_INFO}}

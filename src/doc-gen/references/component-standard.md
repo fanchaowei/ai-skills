@@ -1,48 +1,30 @@
 # {{MODULE_NAME}} - Vue 组件
 
-**文件路径**: `{{MAIN_FILE_PATH}}`
-**最后分析**: {{ANALYSIS_DATE}}
-**文档版本**: 1.0.0
+标准组件模板。用于包含局部状态、子组件协作或明确事件流的 Vue 组件。
 
----
+## 模块概述
 
-## 📋 模块概述
+{{MODULE_OVERVIEW}}
 
-{{MODULE_SUMMARY}}
+## AI 快速接手
 
-**核心职责**:
-{{CORE_RESPONSIBILITIES}}
+{{AI_QUICK_HANDOFF}}
 
-**技术栈**:
-{{TECH_STACK}}
+## AI 修改守则
 
----
+{{AI_CHANGE_RULES}}
 
-## 🏗️ 组件结构
+## 模块边界
 
-{{COMPONENT_STRUCTURE}}
+{{MODULE_BOUNDARY}}
 
----
-
-## 🔧 核心功能
-
-{{CORE_FEATURES}}
-
----
-
-## 📊 数据流
-
-{{DATA_FLOW}}
-
----
-
-## 🎯 组件接口
+## 当前实现契约
 
 ### Props
 
 {{PROPS}}
 
-### Events
+### Emits
 
 {{EVENTS}}
 
@@ -50,12 +32,38 @@
 
 {{SLOTS}}
 
-### Expose 方法
+### Expose
 
 {{EXPOSE_METHODS}}
 
----
+## 核心流程
 
-## 💡 AI 使用提示
+{{CORE_FLOW}}
 
-{{AI_TIPS}}
+## 依赖关系
+
+{{DEPENDENCIES}}
+
+## 影响范围
+
+{{IMPACT_SCOPE}}
+
+## 已验证行为
+
+{{VERIFIED_BEHAVIORS}}
+
+## 修改指南
+
+{{CHANGE_GUIDE}}
+
+## 问题排查路径
+
+{{DEBUGGING_PATHS}}
+
+## 待确认项
+
+{{OPEN_QUESTIONS}}
+
+## 文档维护信息
+
+{{MAINTENANCE_INFO}}

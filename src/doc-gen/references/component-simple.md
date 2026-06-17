@@ -1,36 +1,30 @@
 # {{MODULE_NAME}} - Vue 组件
 
-**文件路径**: `{{MAIN_FILE_PATH}}`
-**最后分析**: {{ANALYSIS_DATE}}
-**文档版本**: 1.0.0
+简单组件模板。正文应保持短而可跳读；默认不生成 Mermaid，不强制生成问题排查路径。
 
----
+## 模块概述
 
-## 📋 模块概述
+{{MODULE_OVERVIEW}}
 
-{{MODULE_SUMMARY}}
+## AI 快速接手
 
-**核心职责**:
-{{CORE_RESPONSIBILITIES}}
+{{AI_QUICK_HANDOFF}}
 
-**技术栈**:
-{{TECH_STACK}}
+## AI 修改守则
 
----
+{{AI_CHANGE_RULES}}
 
-## 🔧 核心功能
+## 模块边界
 
-{{CORE_FEATURES}}
+{{MODULE_BOUNDARY}}
 
----
-
-## 🎯 组件接口
+## 当前实现契约
 
 ### Props
 
 {{PROPS}}
 
-### Events
+### Emits
 
 {{EVENTS}}
 
@@ -38,8 +32,34 @@
 
 {{SLOTS}}
 
----
+### Expose
 
-## 💡 AI 使用提示
+{{EXPOSE_METHODS}}
 
-{{AI_TIPS}}
+## 核心流程
+
+{{CORE_FLOW}}
+
+## 依赖关系
+
+{{DEPENDENCIES}}
+
+## 影响范围
+
+{{IMPACT_SCOPE}}
+
+## 已验证行为
+
+{{VERIFIED_BEHAVIORS}}
+
+## 修改指南
+
+{{CHANGE_GUIDE}}
+
+## 待确认项
+
+{{OPEN_QUESTIONS}}
+
+## 文档维护信息
+
+{{MAINTENANCE_INFO}}
