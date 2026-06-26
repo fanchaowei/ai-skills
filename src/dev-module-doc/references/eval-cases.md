@@ -8,8 +8,9 @@ Prompt:
 
 Expected:
 
-- 生成 `packages/shared-services/docs/modules/service-api-registry.md`。
+- 生成 `packages/shared-services/docs/modules/服务接口注册表.md`。
 - 更新 `packages/shared-services/docs/README.md`。
+- 模块文档文件名和正文使用简体中文。
 - 包含功能清单、公开输入输出、最小使用示例、主要依赖、设计逻辑、常见修改入口。
 
 ## Case 2: Pinia store
@@ -20,8 +21,9 @@ Prompt:
 
 Expected:
 
-- 生成 `apps/config-manage-system/docs/modules/useManageWorkspaceStore.md`。
+- 生成 `apps/config-manage-system/docs/modules/配置管理工作区状态模块.md`。
 - 更新 `apps/config-manage-system/docs/README.md`。
+- 模块文档文件名和正文使用简体中文。
 - 说明 state、getters、actions、使用方式、状态副作用和常见修改入口。
 
 ## Case 3: non-monorepo Vue 2.7 composable
@@ -32,6 +34,7 @@ Prompt:
 
 Expected:
 
-- 生成 `docs/modules/useTable.md`。
+- 生成 `docs/modules/表格组合式函数.md`。
 - 更新 `docs/README.md`。
+- 模块文档文件名和正文使用简体中文。
 - 不要求识别 Vuex。

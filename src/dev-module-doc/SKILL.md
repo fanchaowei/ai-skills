@@ -1,6 +1,6 @@
-﻿---
+---
 name: dev-module-doc
-description: 生成面向开发人员的功能模块开发使用文档。每当用户要求为 Vue 组件、页面、Pinia store、composable、service/API、工具函数或功能目录生成开发文档、使用文档、模块说明、输入输出说明、接入说明、spec-like 文档时，都应使用本 skill。重点输出模块功能、公开输入输出、最小使用示例、主要依赖、设计逻辑和常见修改入口；文档写入 docs/modules 并维护 docs/README.md。
+description: 生成面向开发人员的功能模块开发使用文档。每当用户要求为 Vue 组件、页面、Pinia store、composable、service/API、工具函数或功能目录生成开发文档、使用文档、模块说明、输入输出说明、接入说明、spec-like 文档时，都应使用本 skill。重点输出模块功能、公开输入输出、最小使用示例、主要依赖、设计逻辑和常见修改入口；模块文档写入 docs/modules，文件名和正文使用简体中文，并维护 docs/README.md。
 metadata:
   version: "1.0.0"
   target: "developer-facing module usage documentation"
@@ -26,7 +26,7 @@ metadata:
 4. 读取目标模块代码和相关类型定义。
 5. 按需读取 `references/public-contract.md`，提取公开输入输出。
 6. 按需读取 `references/usage-discovery.md`，基于公开契约整理最小使用示例。
-7. 按 `references/document-template.md` 生成模块文档。
+7. 按 `references/document-template.md` 生成模块文档，确保 `docs/modules/*.md` 的文件名和正文使用简体中文。
 8. 按 `references/index-maintenance.md` 更新 `docs/README.md`。
 9. 按 `references/output-quality.md` 自检输出质量。
 

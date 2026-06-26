@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "Generate developer-facing module usage documentation for packages/shared-services/src/service-api-registry.ts, focusing on features, public inputs, public outputs, and usage.",
-      "expected_output": "Creates packages/shared-services/docs/modules/service-api-registry.md and updates packages/shared-services/docs/README.md. The document includes feature list, public inputs and outputs, minimal usage example, main dependencies, design logic, and common modification entry points.",
+      "expected_output": "Creates packages/shared-services/docs/modules/服务接口注册表.md and updates packages/shared-services/docs/README.md. The module document filename and body are in Simplified Chinese, and the document includes feature list, public inputs and outputs, minimal usage example, main dependencies, design logic, and common modification entry points.",
       "files": [
         "packages/shared-services/src/service-api-registry.ts"
       ]
@@ -12,7 +12,7 @@
     {
       "id": 2,
       "prompt": "Generate developer-facing module usage documentation for apps/config-manage-system/src/store/useManageWorkspaceStore.ts.",
-      "expected_output": "Creates apps/config-manage-system/docs/modules/useManageWorkspaceStore.md and updates apps/config-manage-system/docs/README.md. The document describes Pinia store state, getters, actions, usage, state side effects, and common modification entry points.",
+      "expected_output": "Creates apps/config-manage-system/docs/modules/配置管理工作区状态模块.md and updates apps/config-manage-system/docs/README.md. The module document filename and body are in Simplified Chinese, and the document describes Pinia store state, getters, actions, usage, state side effects, and common modification entry points.",
       "files": [
         "apps/config-manage-system/src/store/useManageWorkspaceStore.ts"
       ]
@@ -20,7 +20,7 @@
     {
       "id": 3,
       "prompt": "Generate developer-facing module usage documentation for src/composables/useTable.ts in a non-monorepo Vue 2.7 + Composition API project.",
-      "expected_output": "Creates docs/modules/useTable.md and updates docs/README.md. Vuex support is not required. The document includes composable parameters, return values, usage example, and common modification entry points.",
+      "expected_output": "Creates docs/modules/表格组合式函数.md and updates docs/README.md. The module document filename and body are in Simplified Chinese. Vuex support is not required. The document includes composable parameters, return values, usage example, and common modification entry points.",
       "files": []
     }
   ]

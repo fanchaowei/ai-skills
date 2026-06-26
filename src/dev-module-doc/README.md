@@ -11,6 +11,7 @@
 
 - monorepo：`apps/<app>/docs/modules/` 或 `packages/<package>/docs/modules/`
 - 非 monorepo：`docs/modules/`
+- `docs/modules/*.md`：文件名和正文使用简体中文。
 
 默认维护：
 
