@@ -20,6 +20,8 @@
 
 ## 当前实现契约
 
+本章节承接 YAML `detail_sections.contract`。完整路由信息、页面状态、API 调用和子组件关系只写在正文，不写入 YAML。
+
 ### 路由信息
 
 {{ROUTE_INFO}}

@@ -20,6 +20,8 @@
 
 ## 当前实现契约
 
+本章节承接 YAML `detail_sections.contract`。完整 props、emits、slots 和 expose 只写在正文，不写入 YAML。
+
 ### Props
 
 {{PROPS}}

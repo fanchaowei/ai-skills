@@ -20,6 +20,8 @@
 
 ## 当前实现契约
 
+本章节承接 YAML `detail_sections.contract`。完整 state、getters 和 actions 只写在正文，不写入 YAML。
+
 ### State
 
 {{STATE}}

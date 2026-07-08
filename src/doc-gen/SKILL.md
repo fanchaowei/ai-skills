@@ -25,10 +25,10 @@ metadata:
 1. 确认模块路径存在；路径不存在时按 `references/error-handling.md` 处理。
 2. 按需读取 `references/repository-routing.md`，判断仓库模式和 owner。
 3. 按需读取 `references/module-detection.md`，识别模块边界、类型和复杂度。
-4. 读取 `references/ai-module-spec-template.md`，确认新文档的 YAML 与正文骨架。
+4. 读取 `references/ai-module-spec-template.md`，确认 `ai-module-spec v2` 的 YAML 索引层与正文骨架。
 5. 根据模块类型和复杂度读取对应类型模板。
-6. 分析代码，提取职责、入口、依赖、状态、API、事件、测试、下游消费者、影响范围、风险点和待确认项。
-7. 生成带 YAML frontmatter 的 `ai-module-spec` 文档到目标 `claudedocs/modules/`。
+6. 分析代码，提取职责、入口、关键文件、依赖、状态、API、事件、测试、下游消费者、影响范围、风险点和待确认项。
+7. 生成带 v2 YAML frontmatter 的 `ai-module-spec` 文档到目标 `claudedocs/modules/`；YAML 只保留索引、关键入口、少量风险雷达和验证命令，完整事实写入正文。
 8. 按需读取 `references/index-maintenance.md`，更新根索引或 owner 索引。
 9. 如果发现根级旧文档，按 `references/migration-policy.md` 先列迁移计划并等待用户确认。
 10. 按 `references/output-quality.md` 检查输出质量，尤其检查是否区分代码确认、测试验证、推断和待确认项。
@@ -66,14 +66,16 @@ metadata:
 
 ## AI 模块规格输出契约
 
-- 新生成文档默认使用 `doc_type: ai-module-spec`。
+- 新生成文档默认使用 `doc_type: ai-module-spec` 和 `spec_version: "2.0"`。
 - YAML frontmatter 是导航层，正文是解释层。
-- YAML 必须包含 `read_order.quick_edit`、`read_order.architecture`、`read_order.debugging`。
+- YAML 必须包含 `read_order` 和 `detail_sections`。
+- YAML 使用 `key_files`、`top_risks` 和 `verification.commands` 提供第一眼索引。
+- YAML 不写完整相关文件、完整风险点、完整影响矩阵、完整测试文件或完整公开契约。
 - 正文前半部分必须包含 `AI 快速接手` 和 `AI 修改守则`。
 - 关键风险点使用 `[代码确认]`、`[测试验证]`、`[推断]`、`[待确认]` 标注。
 - 简单模块可以不生成具体排查步骤和 Mermaid 图；若 `read_order.debugging` 指向 `问题排查路径`，正文保留短章节说明原因。
 - 排查路径和 Mermaid 图只能基于代码、测试或明确调用链生成。
-- 旧文档采用渐进迁移，只有用户明确要求更新格式时才整体改写。
+- 旧文档不批量迁移；更新旧文档对应模块时升级为 v2 key。
 
 ## 输出
 

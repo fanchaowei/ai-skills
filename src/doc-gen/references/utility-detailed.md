@@ -20,6 +20,8 @@
 
 ## 当前实现契约
 
+本章节承接 YAML `detail_sections.contract`。完整公开签名、输入、输出和副作用只写在正文，不写入 YAML。
+
 ### 公开签名
 
 {{PUBLIC_SIGNATURES}}

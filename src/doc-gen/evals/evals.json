@@ -4,28 +4,34 @@
     {
       "id": 1,
       "prompt": "请为 packages/shared-services/src/api 生成模块文档，输出到对应 claudedocs/modules，并维护索引。",
-      "expected_output": "生成 ai-module-spec 文档，包含 YAML frontmatter、read_order、service_contract、测试证明点和影响范围。",
+      "expected_output": "生成 ai-module-spec v2 文档，YAML 包含 spec_version、read_order、detail_sections、key_files、top_risks 和 verification.commands；service 契约、测试证明点和影响范围写入正文。",
       "files": []
     },
     {
       "id": 2,
       "prompt": "请更新 packages/shared-ui/src/leaflet-image-map 的模块文档，要求按新格式整理，但不要编造排查路径。",
-      "expected_output": "升级旧文档为 ai-module-spec，复杂关系使用 Mermaid，无法确认的排查路径进入待确认项。",
+      "expected_output": "升级旧文档为 ai-module-spec v2，YAML 使用新 key 且只承担索引职责；复杂关系使用 Mermaid，无法确认的排查路径进入待确认项。",
       "files": []
     },
     {
       "id": 3,
       "prompt": "请给一个简单工具函数目录生成 claudedocs 文档，文档要适合 AI 快速接手修改。",
-      "expected_output": "简单模块输出较短文档，不强制 Mermaid 或问题排查路径，只保留关键签名、验证和待确认项。",
+      "expected_output": "简单模块输出较短 ai-module-spec v2 文档，不强制 Mermaid 或问题排查路径；YAML 保持 25-40 行并只保留关键文件、风险摘要、验证命令和正文索引。",
       "files": []
     }
   ],
   "objective_assertions": [
     "YAML frontmatter contains doc_type: ai-module-spec",
+    "YAML frontmatter contains spec_version: \"2.0\"",
     "YAML contains read_order.quick_edit, architecture, and debugging",
+    "YAML contains detail_sections for files, risks, impact, tests, and contract",
+    "YAML contains key_files with path and reason entries",
+    "YAML contains top_risks within the module complexity limit",
+    "YAML contains verification.commands and does not list full test files",
+    "YAML does not contain related_files, risk_points, change_impact, verified_by, or type contract blocks",
     "Body contains AI 快速接手 and AI 修改守则 near the top",
-    "Verified behavior includes test files, commands, and proves statements",
-    "Service modules include service_contract or an equivalent service-specific contract section",
+    "Body contains full verified behavior with test files, commands, and proves statements",
+    "Service modules include the full service-specific contract in 当前实现契约",
     "Unconfirmed debugging paths are not invented and appear in 待确认项"
   ]
 }

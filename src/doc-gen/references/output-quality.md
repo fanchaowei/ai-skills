@@ -11,16 +11,24 @@
 
 - 新生成文档必须包含 YAML frontmatter。
 - `doc_type` 固定为 `ai-module-spec`。
+- `spec_version` 固定为 `"2.0"`。
 - `audience` 固定为 `ai`。
 - `read_mode` 固定为 `progressive`。
 - 必须包含 `read_order.quick_edit`、`read_order.architecture`、`read_order.debugging`。
-- YAML 只承担导航和索引职责，不写长篇解释。
+- 必须包含 `detail_sections`，用于把详细信息映射到正文章节。
+- YAML 只承担导航和索引职责，不写长篇解释或完整清单。
+- YAML 不写完整 `related_files`、`risk_points`、`change_impact`、`verified_by.tests` 或类型契约。
 
 ## 长度控制
 
-- 简单模块：YAML 25-50 行，正文 150-300 行。
-- 标准模块：YAML 40-80 行，正文 300-600 行。
-- 复杂模块：YAML 60-120 行，正文 600-900 行。
+- 简单模块：YAML 25-40 行，正文 150-300 行。
+- 标准模块：YAML 40-70 行，正文 300-600 行。
+- 复杂模块：YAML 60-100 行，正文 600-900 行。
+- `key_files` 上限：简单 3、标准 5、复杂 8。
+- `top_risks` 上限：简单 1、标准 2、复杂 3。
+- `verification.commands` 上限：简单 2、标准 3、复杂 4。
+- 先按字段上限裁剪，再按行数上限检查。
+- 超限时优先裁剪 `key_files` 和 `top_risks`，不得删除 `read_order`、`detail_sections` 或 `verification.commands`。
 - 正文可以放宽，但章节必须可跳读。
 
 ## 事实来源
@@ -34,21 +42,30 @@
 ## AI 快速接手
 
 - 正文前半部分必须包含 `AI 快速接手`。
-- 该章节必须列出修改前必读文件、常见修改入口、风险摘要和推荐验证命令。
+- 该章节必须列出修改前必读文件、完整相关文件清单、常见修改入口、风险摘要和推荐验证命令。
 - 正文前半部分必须包含 `AI 修改守则`。
 
 ## 测试与验证
 
+- YAML `verification.commands` 只列推荐验证命令。
 - `已验证行为` 必须同时包含测试文件、验证命令和测试证明点。
 - 如果没有测试，必须在 `待确认项` 说明缺口。
 - 推荐验证命令优先使用项目已有 pnpm 命令。
 
 ## 影响范围
 
+- YAML 只通过 `detail_sections.impact` 指向正文 `影响范围`。
+- 完整修改影响矩阵必须写入正文。
 - 能从 import、测试、路由、调用关系确认的下游消费者写入 `confirmed`。
 - 只能推断的下游消费者写入 `inferred`。
 - 无法确认时不要编造影响范围。
 - 修改影响矩阵必须包含修改类型、影响文件、风险和建议验证。
+
+## 公开契约
+
+- YAML 只通过 `detail_sections.contract` 指向正文 `当前实现契约`。
+- 组件、store、service、composable、utility 的完整公开契约只写入正文。
+- 无法确认的契约字段写为空列表或明确说明未暴露，并在 `待确认项` 说明原因。
 
 ## 问题排查路径
 
@@ -66,8 +83,9 @@
 
 ## 旧文档迁移
 
-- 新文档默认使用新格式。
+- 新文档默认使用 `ai-module-spec v2`。
 - 旧文档只有在用户明确要求更新、重写、升级格式或按新模板整理时迁移。
+- 更新旧文档对应模块时升级为 v2 key，不保留旧 key 和新 key 双写。
 - 普通追加补充时尊重原文档结构。
 - 迁移结果必须在最终报告中说明。
 
@@ -75,5 +93,7 @@
 
 - 检查生成文档路径、索引路径、模块类型、复杂度和未处理事项。
 - 检查 YAML 是否可解析。
+- 检查 YAML 是否包含 `spec_version: "2.0"`、`read_order` 和 `detail_sections`。
+- 检查 YAML 是否没有承载完整相关文件、风险点、影响矩阵、测试文件或公开契约。
 - 检查 `待确认项` 是否收集了不可靠推断。
 - 检查没有大段源码复制。
