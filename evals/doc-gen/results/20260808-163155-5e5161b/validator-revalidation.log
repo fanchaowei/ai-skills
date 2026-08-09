@@ -1,0 +1,18 @@
+﻿run_id=20260808-163155-5e5161b
+validator_path=E:\project\skills\ai-skills\.worktrees\doc-gen-v3\evals\doc-gen\scripts\validate-structure.ps1
+validator_sha256=96e6474c51de0e14c7f14df1490a17e8fa0868a561a4c893d0f8626a35550544
+mode=validator-only revalidation of immutable persisted outputs
+boundary-generation: PASS validation_repository_root=E:\project\skills\ai-skills\.worktrees\doc-gen-v3\evals\doc-gen\fixtures\harbor-map\baseline exit_code=0
+quick-understanding: PASS validation_repository_root=E:\project\skills\ai-skills\.worktrees\doc-gen-v3\evals\doc-gen\fixtures\harbor-map\baseline exit_code=0
+add-feature: PASS validation_repository_root=G:\Users\FANCHA~1\AppData\Local\Temp\doc-gen-validator-revalidation-20260808-163155-5e5161b\add-feature\repository exit_code=0
+modify-feature: PASS validation_repository_root=G:\Users\FANCHA~1\AppData\Local\Temp\doc-gen-validator-revalidation-20260808-163155-5e5161b\modify-feature\repository exit_code=0
+remove-feature: PASS validation_repository_root=G:\Users\FANCHA~1\AppData\Local\Temp\doc-gen-validator-revalidation-20260808-163155-5e5161b\remove-feature\repository exit_code=0
+ui-state-bug: PASS validation_repository_root=G:\Users\FANCHA~1\AppData\Local\Temp\doc-gen-validator-revalidation-20260808-163155-5e5161b\ui-state-bug\repository exit_code=0
+concurrency-bug: PASS validation_repository_root=E:\project\skills\ai-skills\.worktrees\doc-gen-v3\evals\doc-gen\fixtures\harbor-map\baseline exit_code=0
+dto-contract-change: PASS validation_repository_root=G:\Users\FANCHA~1\AppData\Local\Temp\doc-gen-validator-revalidation-20260808-163155-5e5161b\dto-contract-change\repository exit_code=0
+provider-contract-change: PASS validation_repository_root=G:\Users\FANCHA~1\AppData\Local\Temp\doc-gen-validator-revalidation-20260808-163155-5e5161b\provider-contract-change\repository exit_code=0
+fact-conflict: PASS validation_repository_root=G:\Users\FANCHA~1\AppData\Local\Temp\doc-gen-validator-revalidation-20260808-163155-5e5161b\fact-conflict\repository exit_code=0
+incremental-update: PASS validation_repository_root=G:\Users\FANCHA~1\AppData\Local\Temp\doc-gen-validator-revalidation-20260808-163155-5e5161b\incremental-update\repository exit_code=0
+no-update-bugfix: PASS document_expected=false decision_path=E:\project\skills\ai-skills\.worktrees\doc-gen-v3\evals\doc-gen\results\20260808-163155-5e5161b\no-update-bugfix\generated\decision.md
+no-update-refactor: PASS document_expected=false decision_path=E:\project\skills\ai-skills\.worktrees\doc-gen-v3\evals\doc-gen\results\20260808-163155-5e5161b\no-update-refactor\generated\decision.md
+summary=13/13 pass

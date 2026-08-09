@@ -1,0 +1,14 @@
+{
+  "run_id": "20260808-102543-5e5161b",
+  "scenario_id": "boundary-generation-red",
+  "structure_result": "fail",
+  "semantic_result": "fail",
+  "final_status": "fail",
+  "evidence": [
+    "YAML uses spec_version 2.0 and v2 fields primary_use_cases, key_files, read_order, top_risks, and verification.commands",
+    "YAML adds the free detail_sections key fence_entry instead of a fixed vocabulary",
+    "HarborPage.vue appears in key_files and the body contains downstream consumer, impact, modification, and troubleshooting facts",
+    "The document has no feature_index path#symbol navigation for setZonesVisible",
+    "The document expands to 462 lines and restores AI quick-start, AI modification rules, impact scope, and verified-behavior sections"
+  ]
+}

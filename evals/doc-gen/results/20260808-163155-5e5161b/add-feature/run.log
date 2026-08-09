@@ -1,0 +1,13 @@
+﻿run_id=20260808-163155-5e5161b
+scenario_id=add-feature
+skill_snapshot_sha256=3acad42ccd1e0a74cdf5c82721c7762f1b0af184cbd32bb7278e433018277b48
+executor=fresh subagent
+fork_turns=none
+temp_workspace=G:\Users\FANCHA~1\AppData\Local\Temp\doc-gen-eval-20260808-163155-5e5161b-add-feature
+validation_repository_root=G:\Users\FANCHA~1\AppData\Local\Temp\doc-gen-eval-20260808-163155-5e5161b-add-feature\structure-validation\repository
+scenario_diff_sha256=2c758127fe70bc919f19603685e81c7834d56c0c78553c3c7c38450a49d5e8db
+git_apply_check_exit_code=0
+git_apply_exit_code=0
+persisted_before_scoring=true
+temp_cleanup=completed
+

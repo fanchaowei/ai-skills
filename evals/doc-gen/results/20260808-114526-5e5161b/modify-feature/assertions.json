@@ -1,0 +1,15 @@
+{
+  "run_id": "20260808-114526-5e5161b",
+  "scenario_id": "modify-feature",
+  "structure": {"status": "pass", "log": "structure-check.log", "feature_entries": 4, "detail_sections": 6, "repository_root": "materialized modify-feature diff"},
+  "semantic": {
+    "status": "pass",
+    "success_assertions": [
+      {"assertion": "只更新最少点数、数据转换和验证入口", "status": "pass", "evidence": "文档把门槛更新为四个有效点，更新 normalizeZone 数据规则与 adapter 验证入口，并记录组件旧三点夹具冲突。"}
+    ],
+    "blocking_assertions": [
+      {"assertion": "不得重写模块边界或无关 Vue 契约", "status": "pass", "evidence": "模块边界与 Props/Emits/Slots/Expose 保持原职责，变化集中在电子围栏规则、转换和验证。"}
+    ]
+  },
+  "final_status": "pass"
+}

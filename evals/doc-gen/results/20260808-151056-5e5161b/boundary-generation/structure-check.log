@@ -1,0 +1,4 @@
+repository_root=baseline
+PASS: generated/HarborMap.md
+feature_entries=3 detail_sections=6
+exit_code=0

@@ -1,0 +1,8 @@
+repository_root=materialized internal-refactor diff
+FAIL: Missing spec_version: "3.0"
+FAIL: Missing feature_index
+FAIL: Forbidden v2 field: key_files
+FAIL: Missing detail_sections.scope
+FAIL: Missing detail_sections.verification
+FAIL: Unsupported detail_sections key: tests
+exit_code=1

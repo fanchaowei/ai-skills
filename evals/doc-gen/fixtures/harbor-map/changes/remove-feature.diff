@@ -1,0 +1,233 @@
+diff --git a/apps/harbor-system/src/components/harbor-map/HarborMap.vue b/apps/harbor-system/src/components/harbor-map/HarborMap.vue
+index 9100a61..25e77e6 100644
+--- a/apps/harbor-system/src/components/harbor-map/HarborMap.vue
++++ b/apps/harbor-system/src/components/harbor-map/HarborMap.vue
+@@ -1,10 +1,5 @@
+ <script setup lang="ts">
+-import { ref } from 'vue'
+ import MapCanvas from '@shared/ui/map-canvas'
+-import type { MapCanvasExpose } from '@shared/ui/map-canvas/public'
+-import { normalizeZone } from './adapters/normalize-zone'
+-import { fetchHarborZones } from './services/harbor-api'
+-import type { HarborMapExpose, HarborZoneResult } from './types'
+ 
+ withDefaults(
+   defineProps<{
+@@ -15,63 +10,14 @@ withDefaults(
+   },
+ )
+ 
+-const emit = defineEmits<{
++defineEmits<{
+   zoneStatusChange: [status: 'visible' | 'hidden' | 'error']
+ }>()
+-
+-const mapCanvasRef = ref<MapCanvasExpose>()
+-let requestVersion = 0
+-
+-async function setZonesVisible(visible: boolean): Promise<HarborZoneResult> {
+-  const currentVersion = ++requestVersion
+-  const mapCanvas = mapCanvasRef.value
+-  if (!mapCanvas) return { status: 'render-error' }
+-
+-  if (!visible) {
+-    try {
+-      await mapCanvas.clearZones()
+-      if (currentVersion !== requestVersion) return { status: 'superseded' }
+-      emit('zoneStatusChange', 'hidden')
+-      return { status: 'success', count: 0 }
+-    } catch {
+-      emit('zoneStatusChange', 'error')
+-      return { status: 'render-error' }
+-    }
+-  }
+-
+-  try {
+-    const response = await fetchHarborZones()
+-    if (currentVersion !== requestVersion) return { status: 'superseded' }
+-    if (response.code !== 200) {
+-      emit('zoneStatusChange', 'error')
+-      return { status: 'request-error' }
+-    }
+-
+-    const zones = response.data.map(normalizeZone).filter((zone) => zone !== null)
+-    if (zones.length === 0) return { status: 'empty' }
+-
+-    const result = await mapCanvas.replaceZones(zones)
+-    if (currentVersion !== requestVersion) return { status: 'superseded' }
+-    if (result.status !== 'success') {
+-      emit('zoneStatusChange', 'error')
+-      return { status: result.status === 'empty' ? 'empty' : 'render-error' }
+-    }
+-
+-    emit('zoneStatusChange', 'visible')
+-    return { status: 'success', count: result.count }
+-  } catch {
+-    if (currentVersion !== requestVersion) return { status: 'superseded' }
+-    emit('zoneStatusChange', 'error')
+-    return { status: 'request-error' }
+-  }
+-}
+-
+-defineExpose<HarborMapExpose>({ setZonesVisible })
+ </script>
+ 
+ <template>
+   <section class="harbor-map">
+     <slot name="toolbar" />
+-    <MapCanvas ref="mapCanvasRef" :initial-zoom="initialZoom" />
++    <MapCanvas :initial-zoom="initialZoom" />
+   </section>
+ </template>
+diff --git a/apps/harbor-system/src/components/harbor-map/__tests__/HarborMap.spec.ts b/apps/harbor-system/src/components/harbor-map/__tests__/HarborMap.spec.ts
+deleted file mode 100644
+index 7a3f183..0000000
+--- a/apps/harbor-system/src/components/harbor-map/__tests__/HarborMap.spec.ts
++++ /dev/null
+@@ -1,85 +0,0 @@
+-import { defineComponent, h } from 'vue'
+-import { mount } from '@vue/test-utils'
+-import { beforeEach, describe, expect, it, vi } from 'vitest'
+-import HarborMap from '../HarborMap.vue'
+-import type { HarborMapExpose } from '../types'
+-import { fetchHarborZones } from '../services/harbor-api'
+-
+-const clearZones = vi.fn<() => Promise<void>>()
+-const replaceZones = vi.fn()
+-
+-vi.mock('../services/harbor-api', () => ({ fetchHarborZones: vi.fn() }))
+-
+-const MapCanvasStub = defineComponent({
+-  name: 'MapCanvas',
+-  setup(_, { expose }) {
+-    expose({ clearZones, replaceZones })
+-    return () => h('div', { 'data-test': 'map-canvas' })
+-  },
+-})
+-
+-function mountHarborMap(options: Parameters<typeof mount>[1] = {}) {
+-  return mount(HarborMap, {
+-    ...options,
+-    global: {
+-      ...options.global,
+-      stubs: { MapCanvas: MapCanvasStub, ...options.global?.stubs },
+-    },
+-  })
+-}
+-
+-describe('HarborMap', () => {
+-  beforeEach(() => {
+-    vi.clearAllMocks()
+-    clearZones.mockResolvedValue()
+-    replaceZones.mockResolvedValue({ status: 'success', count: 1 })
+-  })
+-
+-  it('does not request zones when hiding', async () => {
+-    const wrapper = mountHarborMap()
+-    const result = await (wrapper.vm as unknown as HarborMapExpose).setZonesVisible(false)
+-
+-    expect(result).toEqual({ status: 'success', count: 0 })
+-    expect(fetchHarborZones).toHaveBeenCalledTimes(0)
+-    expect(clearZones).toHaveBeenCalledTimes(1)
+-  })
+-
+-  it('keeps only the latest visible request result', async () => {
+-    const pending: Array<(value: Awaited<ReturnType<typeof fetchHarborZones>>) => void> = []
+-    vi.mocked(fetchHarborZones).mockImplementation(
+-      () => new Promise((resolve) => pending.push(resolve)),
+-    )
+-    const wrapper = mountHarborMap()
+-    const exposed = wrapper.vm as unknown as HarborMapExpose
+-
+-    const older = exposed.setZonesVisible(true)
+-    const latest = exposed.setZonesVisible(true)
+-    pending[1]({
+-      code: 200,
+-      data: [{ zone_id: 'latest', enabled: '0', points: '1,1_2,2_3,3' }],
+-    })
+-    await Promise.resolve()
+-    pending[0]({
+-      code: 200,
+-      data: [{ zone_id: 'older', enabled: '0', points: '4,4_5,5_6,6' }],
+-    })
+-
+-    await expect(latest).resolves.toEqual({ status: 'success', count: 1 })
+-    await expect(older).resolves.toEqual({ status: 'superseded' })
+-    expect(replaceZones).toHaveBeenCalledTimes(1)
+-  })
+-
+-  it('exposes props emits slots and setZonesVisible', async () => {
+-    const wrapper = mountHarborMap({
+-      props: { initialZoom: 15 },
+-      slots: { toolbar: '<button data-test="toolbar">Zones</button>' },
+-    })
+-
+-    expect(wrapper.props('initialZoom')).toBe(15)
+-    expect(wrapper.get('[data-test="toolbar"]').text()).toBe('Zones')
+-    expect(typeof (wrapper.vm as unknown as HarborMapExpose).setZonesVisible).toBe('function')
+-
+-    await (wrapper.vm as unknown as HarborMapExpose).setZonesVisible(false)
+-    expect(wrapper.emitted('zoneStatusChange')).toEqual([['hidden']])
+-  })
+-})
+diff --git a/apps/harbor-system/src/components/harbor-map/adapters/normalize-zone.ts b/apps/harbor-system/src/components/harbor-map/adapters/normalize-zone.ts
+deleted file mode 100644
+index f83cc39..0000000
+--- a/apps/harbor-system/src/components/harbor-map/adapters/normalize-zone.ts
++++ /dev/null
+@@ -1,17 +0,0 @@
+-import type { MapZoneModel } from '@shared/ui/map-canvas/public'
+-import type { HarborZoneDto } from '../types'
+-
+-export function normalizeZone(dto: HarborZoneDto): MapZoneModel | null {
+-  if (dto.enabled !== '0' || dto.zone_id.trim() === '') return null
+-
+-  const coordinates = dto.points
+-    .split('_')
+-    .map((point) => point.split(',').map(Number))
+-    .filter(
+-      (point): point is [number, number] =>
+-        point.length === 2 && Number.isFinite(point[0]) && Number.isFinite(point[1]),
+-    )
+-
+-  if (coordinates.length < 3) return null
+-  return { id: dto.zone_id, coordinates }
+-}
+diff --git a/apps/harbor-system/src/components/harbor-map/services/harbor-api.ts b/apps/harbor-system/src/components/harbor-map/services/harbor-api.ts
+deleted file mode 100644
+index 9f42c0e..0000000
+--- a/apps/harbor-system/src/components/harbor-map/services/harbor-api.ts
++++ /dev/null
+@@ -1,10 +0,0 @@
+-import type { HarborZoneDto } from '../types'
+-
+-export interface HarborApiResponse {
+-  code: number
+-  data: HarborZoneDto[]
+-}
+-
+-export async function fetchHarborZones(): Promise<HarborApiResponse> {
+-  return { code: 200, data: [] }
+-}
+diff --git a/apps/harbor-system/src/components/harbor-map/types.ts b/apps/harbor-system/src/components/harbor-map/types.ts
+deleted file mode 100644
+index 727b753..0000000
+--- a/apps/harbor-system/src/components/harbor-map/types.ts
++++ /dev/null
+@@ -1,16 +0,0 @@
+-export interface HarborZoneDto {
+-  zone_id: string
+-  enabled: '0' | '1'
+-  points: string
+-}
+-
+-export type HarborZoneResult =
+-  | { status: 'success'; count: number }
+-  | { status: 'empty' }
+-  | { status: 'request-error' }
+-  | { status: 'render-error' }
+-  | { status: 'superseded' }
+-
+-export interface HarborMapExpose {
+-  setZonesVisible(visible: boolean): Promise<HarborZoneResult>
+-}

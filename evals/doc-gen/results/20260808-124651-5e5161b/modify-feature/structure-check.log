@@ -1,0 +1,4 @@
+repository_root=materialized modify-feature diff
+PASS: generated/HarborMap.md
+feature_entries=2 detail_sections=7
+exit_code=0

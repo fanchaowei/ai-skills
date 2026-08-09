@@ -1,0 +1,1 @@
+{"run_id":"20260808-151056-5e5161b","scenario_id":"no-update-refactor","skill_revision":"5e5161b+working-tree-no-update-migration-fix","input_paths":["src/doc-gen","baseline","internal-refactor.diff"],"validation_repository_root":"materialized internal-refactor diff","isolation":{"executor":"fresh subagent","fork_turns":"none"}}

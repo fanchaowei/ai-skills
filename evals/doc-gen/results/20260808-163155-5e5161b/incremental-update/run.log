@@ -1,0 +1,12 @@
+﻿run_id=20260808-163155-5e5161b
+scenario_id=incremental-update
+skill_snapshot_sha256=3acad42ccd1e0a74cdf5c82721c7762f1b0af184cbd32bb7278e433018277b48
+executor=fresh subagent
+fork_turns=none
+temp_workspace=G:\Users\FanChaoWei\AppData\Local\Temp\doc-gen-eval-20260808-163155-5e5161b-incremental-update
+validation_repository_root=G:\Users\FanChaoWei\AppData\Local\Temp\doc-gen-eval-20260808-163155-5e5161b-incremental-update\structure-validation\repository
+scenario_diff_sha256=559efcd68806c8b6350724ea1f8cd8a679edc3060b591a107c1245efd8cc86b7
+git_apply_check_exit_code=0
+git_apply_exit_code=0
+persisted_before_scoring=true
+temp_cleanup=pending

@@ -1,0 +1,9 @@
+run_id=20260808-110659-green-5e5161b
+scenario_id=dto-contract-change
+executor=green_dto
+fork_turns=none
+input_scope=src/doc-gen + harbor-map baseline + dto-change.diff
+output=generated/HarborMap.md
+raw_response=raw-response.md
+persisted_before_scoring=true
+temp_cleanup=completed

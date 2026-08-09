@@ -1,0 +1,27 @@
+﻿{
+    "run_id":  "20260808-163155-5e5161b",
+    "scenario_id":  "provider-contract-change",
+    "structure":  {
+                      "status":  "pass",
+                      "feature_entries":  2,
+                      "detail_sections":  6
+                  },
+    "semantic":  {
+                     "status":  "pass",
+                     "success_assertions":  [
+                                                {
+                                                    "assertion":  "识别 MapCanvasExpose/MapZoneCommandResult、partial 返回和模块内吸收位置",
+                                                    "status":  "pass",
+                                                    "evidence":  "直接依赖章节列出 partial(count, skipped)，并说明在 setZonesVisible 中收敛为 HarborZoneResult.render-error。"
+                                                }
+                                            ],
+                     "blocking_assertions":  [
+                                                 {
+                                                     "assertion":  "不读取 provider 内部实现或扩展到 caller",
+                                                     "status":  "pass",
+                                                     "evidence":  "文档只记录 public.ts 公开声明和 HarborMap 使用分支，明确排除 provider 内部实现与调用方。"
+                                                 }
+                                             ]
+                 },
+    "final_status":  "pass"
+}

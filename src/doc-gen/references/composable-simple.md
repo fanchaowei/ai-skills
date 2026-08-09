@@ -1,67 +1,19 @@
-# {{MODULE_NAME}} - Composable/Hook
+# 简单 Composable/Hook 补充规则
 
-简单 composable 模板。重点呈现参数、返回值、副作用、修改入口和验证方式。
+使用通用 v3 骨架，保持公开签名与副作用说明精简。
 
-## 模块概述
-
-{{MODULE_OVERVIEW}}
-
-## AI 快速接手
-
-{{AI_QUICK_HANDOFF}}
-
-## AI 修改守则
-
-{{AI_CHANGE_RULES}}
-
-## 模块边界
-
-{{MODULE_BOUNDARY}}
-
-## 当前实现契约
-
-本章节承接 YAML `detail_sections.contract`。完整参数、返回值和副作用只写在正文，不写入 YAML。
+## 当前公开契约
 
 ### 参数
 
-{{PARAMETERS}}
+{{PARAMETERS_OR_NONE}}
 
 ### 返回值
 
-{{RETURNS}}
+{{RETURNS_OR_NONE}}
 
 ### 副作用
 
-{{SIDE_EFFECTS}}
+{{SIDE_EFFECTS_OR_NONE}}
 
-## 核心流程
-
-{{CORE_FLOW}}
-
-## 依赖关系
-
-{{DEPENDENCIES}}
-
-## 影响范围
-
-{{IMPACT_SCOPE}}
-
-## 已验证行为
-
-{{VERIFIED_BEHAVIORS}}
-
-## 修改指南
-
-{{CHANGE_GUIDE}}
-
-## 问题排查路径
-
-{{DEBUGGING_PATHS}}
-
-## 待确认项
-
-{{OPEN_QUESTIONS}}
-
-## 文档维护信息
-
-{{MAINTENANCE_INFO}}
+内部 ref、私有 helper 和调用方状态不因可检索而成为公开契约。

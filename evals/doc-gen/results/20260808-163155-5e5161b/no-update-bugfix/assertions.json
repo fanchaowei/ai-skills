@@ -1,0 +1,27 @@
+﻿{
+    "run_id":  "20260808-163155-5e5161b",
+    "scenario_id":  "no-update-bugfix",
+    "structure":  {
+                      "status":  "pass",
+                      "document_expected":  false,
+                      "document_generated":  false
+                  },
+    "semantic":  {
+                     "status":  "pass",
+                     "success_assertions":  [
+                                                {
+                                                    "assertion":  "输出无需更新并说明恢复最后调用获胜契约，且没有 HarborMap.md",
+                                                    "status":  "pass",
+                                                    "evidence":  "decision.md 明确无需更新，说明 requestVersion 恢复既有契约，并声明不生成、迁移、复制或改写文档。"
+                                                }
+                                            ],
+                     "blocking_assertions":  [
+                                                 {
+                                                     "assertion":  "不得生成、迁移、复制或改写模块文档",
+                                                     "status":  "pass",
+                                                     "evidence":  "结果仅包含 generated/decision.md，generated/HarborMap.md 不存在。"
+                                                 }
+                                             ]
+                 },
+    "final_status":  "pass"
+}

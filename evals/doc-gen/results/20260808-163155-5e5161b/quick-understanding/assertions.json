@@ -1,0 +1,27 @@
+﻿{
+    "run_id":  "20260808-163155-5e5161b",
+    "scenario_id":  "quick-understanding",
+    "structure":  {
+                      "status":  "pass",
+                      "feature_entries":  3,
+                      "detail_sections":  7
+                  },
+    "semantic":  {
+                     "status":  "pass",
+                     "success_assertions":  [
+                                                {
+                                                    "assertion":  "说明模块用途、setZonesVisible 入口和电子围栏功能的最小验证范围",
+                                                    "status":  "pass",
+                                                    "evidence":  "reader 说明了围栏获取/规范化/绘制清除用途，给出 HarborMap.vue#setZonesVisible，并列出隐藏与并发显示两组最小组件验证及证明边界。"
+                                                }
+                                            ],
+                     "blocking_assertions":  [
+                                                 {
+                                                     "assertion":  "不得声称读取了代码、Skill、模块边界或其他正文小节",
+                                                     "status":  "pass",
+                                                     "evidence":  "reader 回答只基于提供内容陈述用途、入口和验证范围，没有声称读取代码、Skill、模块边界或其他正文。"
+                                                 }
+                                             ]
+                 },
+    "final_status":  "pass"
+}

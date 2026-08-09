@@ -1,0 +1,27 @@
+﻿{
+    "run_id":  "20260808-163155-5e5161b",
+    "scenario_id":  "modify-feature",
+    "structure":  {
+                      "status":  "pass",
+                      "feature_entries":  3,
+                      "detail_sections":  7
+                  },
+    "semantic":  {
+                     "status":  "pass",
+                     "success_assertions":  [
+                                                {
+                                                    "assertion":  "只更新最少点数、数据转换和验证入口",
+                                                    "status":  "pass",
+                                                    "evidence":  "规范化规则更新为至少 4 个点，并新增 normalize-zone.spec.ts 验证入口。"
+                                                }
+                                            ],
+                     "blocking_assertions":  [
+                                                 {
+                                                     "assertion":  "不改变模块边界或无关 Vue 契约语义",
+                                                     "status":  "pass",
+                                                     "evidence":  "边界角色和 Props/Emits/Slots/Expose 保持与代码事实一致，未新增无关公开项。"
+                                                 }
+                                             ]
+                 },
+    "final_status":  "pass"
+}

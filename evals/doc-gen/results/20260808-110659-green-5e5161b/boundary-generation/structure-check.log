@@ -1,0 +1,3 @@
+PASS: evals/doc-gen/results/20260808-110659-green-5e5161b/boundary-generation/generated/HarborMap.md
+feature_entries=4 detail_sections=5
+exit_code=0

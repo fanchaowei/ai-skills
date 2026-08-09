@@ -1,0 +1,4 @@
+﻿repository_root=G:\Users\FANCHA~1\AppData\Local\Temp\doc-gen-eval-20260808-163155-5e5161b-no-update-bugfix\structure-validation\repository
+document_expected=false
+PASS: decision-only scenario produced no module document
+exit_code=0

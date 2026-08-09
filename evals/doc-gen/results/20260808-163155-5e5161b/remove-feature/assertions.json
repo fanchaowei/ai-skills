@@ -1,0 +1,27 @@
+﻿{
+    "run_id":  "20260808-163155-5e5161b",
+    "scenario_id":  "remove-feature",
+    "structure":  {
+                      "status":  "pass",
+                      "feature_entries":  2,
+                      "detail_sections":  4
+                  },
+    "semantic":  {
+                     "status":  "pass",
+                     "success_assertions":  [
+                                                {
+                                                    "assertion":  "删除失效功能索引、功能章节和 Expose，保留 shared-ui 直接公共依赖边界",
+                                                    "status":  "pass",
+                                                    "evidence":  "文档不再包含 setZonesVisible、normalizeZone、fetchHarborZones 或 HarborZoneResult；Expose 明确为空，仍记录 MapCanvas 默认导出依赖。"
+                                                }
+                                            ],
+                     "blocking_assertions":  [
+                                                 {
+                                                     "assertion":  "不规划 caller 修改或删除 shared-ui provider",
+                                                     "status":  "pass",
+                                                     "evidence":  "正文只描述 HarborMap 当前轻量容器事实，没有 caller 修改计划或 provider 删除计划。"
+                                                 }
+                                             ]
+                 },
+    "final_status":  "pass"
+}

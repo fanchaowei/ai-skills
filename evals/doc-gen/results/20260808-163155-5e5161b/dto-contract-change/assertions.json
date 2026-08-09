@@ -1,0 +1,27 @@
+﻿{
+    "run_id":  "20260808-163155-5e5161b",
+    "scenario_id":  "dto-contract-change",
+    "structure":  {
+                      "status":  "pass",
+                      "feature_entries":  4,
+                      "detail_sections":  7
+                  },
+    "semantic":  {
+                     "status":  "pass",
+                     "success_assertions":  [
+                                                {
+                                                    "assertion":  "识别 DTO、响应包装、service、adapter、内部模型和 Vue 公开结果责任分层",
+                                                    "status":  "pass",
+                                                    "evidence":  "文档串联 HarborApiResponse.data.items、HarborZoneDto.boundary、harbor-api、normalize-zone、MapZoneModel 与 HarborZoneResult。"
+                                                }
+                                            ],
+                     "blocking_assertions":  [
+                                                 {
+                                                     "assertion":  "不要求修改 shared-ui provider 或 caller",
+                                                     "status":  "pass",
+                                                     "evidence":  "后端变化在 service/DTO/adapter/组件内吸收，shared-ui 仅保留稳定公开模型，未规划 caller 修改。"
+                                                 }
+                                             ]
+                 },
+    "final_status":  "pass"
+}

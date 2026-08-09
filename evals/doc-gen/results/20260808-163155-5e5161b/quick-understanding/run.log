@@ -1,0 +1,14 @@
+﻿run_id=20260808-163155-5e5161b
+scenario_id=quick-understanding
+execution_mode=generate-then-read
+skill_snapshot_sha256=3acad42ccd1e0a74cdf5c82721c7762f1b0af184cbd32bb7278e433018277b48
+writer_executor=fresh subagent
+writer_fork_turns=none
+writer_temp_workspace=G:\Users\FANCHA~1\AppData\Local\Temp\doc-gen-eval-20260808-163155-5e5161b-quick-understanding-writer
+reader_executor=fresh subagent
+reader_fork_turns=none
+reader_temp_workspace=G:\Users\FANCHA~1\AppData\Local\Temp\doc-gen-eval-20260808-163155-5e5161b-quick-understanding-reader
+reader_sections=yaml|电子围栏显隐编排|验证入口与证明范围
+validation_repository_root=E:\project\skills\ai-skills\.worktrees\doc-gen-v3\evals\doc-gen\fixtures\harbor-map\baseline
+persisted_before_scoring=true
+temp_cleanup=pending

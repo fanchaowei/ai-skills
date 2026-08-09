@@ -1,0 +1,207 @@
+﻿{
+    "run_id":  "20260808-163155-5e5161b",
+    "revalidation_kind":  "validator-only",
+    "skill_revision":  "working-tree-sha256:3acad42ccd1e0a74cdf5c82721c7762f1b0af184cbd32bb7278e433018277b48",
+    "validator":  {
+                      "path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\scripts\\validate-structure.ps1",
+                      "sha256":  "96e6474c51de0e14c7f14df1490a17e8fa0868a561a4c893d0f8626a35550544"
+                  },
+    "immutable_outputs":  true,
+    "scenarios":  [
+                      {
+                          "scenario_id":  "boundary-generation",
+                          "mode":  "document",
+                          "document_path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\boundary-generation\\generated\\HarborMap.md",
+                          "validation_repository_root":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\fixtures\\harbor-map\\baseline",
+                          "diff":  null,
+                          "validator_output":  [
+                                                   "PASS: E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\boundary-generation\\generated\\HarborMap.md",
+                                                   "feature_entries=4 detail_sections=6"
+                                               ],
+                          "exit_code":  0
+                      },
+                      {
+                          "scenario_id":  "quick-understanding",
+                          "mode":  "document",
+                          "document_path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\quick-understanding\\generated\\HarborMap.md",
+                          "validation_repository_root":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\fixtures\\harbor-map\\baseline",
+                          "diff":  null,
+                          "validator_output":  [
+                                                   "PASS: E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\quick-understanding\\generated\\HarborMap.md",
+                                                   "feature_entries=3 detail_sections=7"
+                                               ],
+                          "exit_code":  0
+                      },
+                      {
+                          "scenario_id":  "add-feature",
+                          "mode":  "document",
+                          "document_path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\add-feature\\generated\\HarborMap.md",
+                          "validation_repository_root":  "G:\\Users\\FANCHA~1\\AppData\\Local\\Temp\\doc-gen-validator-revalidation-20260808-163155-5e5161b\\add-feature\\repository",
+                          "diff":  {
+                                       "path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\fixtures\\harbor-map\\changes\\add-feature.diff",
+                                       "sha256":  "2c758127fe70bc919f19603685e81c7834d56c0c78553c3c7c38450a49d5e8db",
+                                       "apply_check_exit_code":  0,
+                                       "apply_exit_code":  0
+                                   },
+                          "validator_output":  [
+                                                   "PASS: E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\add-feature\\generated\\HarborMap.md",
+                                                   "feature_entries=4 detail_sections=8"
+                                               ],
+                          "exit_code":  0
+                      },
+                      {
+                          "scenario_id":  "modify-feature",
+                          "mode":  "document",
+                          "document_path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\modify-feature\\generated\\HarborMap.md",
+                          "validation_repository_root":  "G:\\Users\\FANCHA~1\\AppData\\Local\\Temp\\doc-gen-validator-revalidation-20260808-163155-5e5161b\\modify-feature\\repository",
+                          "diff":  {
+                                       "path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\fixtures\\harbor-map\\changes\\modify-feature.diff",
+                                       "sha256":  "559efcd68806c8b6350724ea1f8cd8a679edc3060b591a107c1245efd8cc86b7",
+                                       "apply_check_exit_code":  0,
+                                       "apply_exit_code":  0
+                                   },
+                          "validator_output":  [
+                                                   "PASS: E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\modify-feature\\generated\\HarborMap.md",
+                                                   "feature_entries=3 detail_sections=7"
+                                               ],
+                          "exit_code":  0
+                      },
+                      {
+                          "scenario_id":  "remove-feature",
+                          "mode":  "document",
+                          "document_path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\remove-feature\\generated\\HarborMap.md",
+                          "validation_repository_root":  "G:\\Users\\FANCHA~1\\AppData\\Local\\Temp\\doc-gen-validator-revalidation-20260808-163155-5e5161b\\remove-feature\\repository",
+                          "diff":  {
+                                       "path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\fixtures\\harbor-map\\changes\\remove-feature.diff",
+                                       "sha256":  "41ea01b907d7d6f86dc670f8ae9c73e51ce752cd6d8a9ef553e970eba74bd034",
+                                       "apply_check_exit_code":  0,
+                                       "apply_exit_code":  0
+                                   },
+                          "validator_output":  [
+                                                   "PASS: E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\remove-feature\\generated\\HarborMap.md",
+                                                   "feature_entries=2 detail_sections=4"
+                                               ],
+                          "exit_code":  0
+                      },
+                      {
+                          "scenario_id":  "ui-state-bug",
+                          "mode":  "document",
+                          "document_path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\ui-state-bug\\generated\\HarborMap.md",
+                          "validation_repository_root":  "G:\\Users\\FANCHA~1\\AppData\\Local\\Temp\\doc-gen-validator-revalidation-20260808-163155-5e5161b\\ui-state-bug\\repository",
+                          "diff":  {
+                                       "path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\fixtures\\harbor-map\\changes\\ui-state-symptom.diff",
+                                       "sha256":  "bbdf14bdcee5c226fbdd3f3c3cde544ca010b044c2297f58025284398bd264a8",
+                                       "apply_check_exit_code":  0,
+                                       "apply_exit_code":  0
+                                   },
+                          "validator_output":  [
+                                                   "PASS: E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\ui-state-bug\\generated\\HarborMap.md",
+                                                   "feature_entries=4 detail_sections=7"
+                                               ],
+                          "exit_code":  0
+                      },
+                      {
+                          "scenario_id":  "concurrency-bug",
+                          "mode":  "document",
+                          "document_path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\concurrency-bug\\generated\\HarborMap.md",
+                          "validation_repository_root":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\fixtures\\harbor-map\\baseline",
+                          "diff":  null,
+                          "validator_output":  [
+                                                   "PASS: E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\concurrency-bug\\generated\\HarborMap.md",
+                                                   "feature_entries=4 detail_sections=7"
+                                               ],
+                          "exit_code":  0
+                      },
+                      {
+                          "scenario_id":  "dto-contract-change",
+                          "mode":  "document",
+                          "document_path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\dto-contract-change\\generated\\HarborMap.md",
+                          "validation_repository_root":  "G:\\Users\\FANCHA~1\\AppData\\Local\\Temp\\doc-gen-validator-revalidation-20260808-163155-5e5161b\\dto-contract-change\\repository",
+                          "diff":  {
+                                       "path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\fixtures\\harbor-map\\changes\\dto-change.diff",
+                                       "sha256":  "a69018126bd9d16e55e9c50bef1a7ce9636e8911daeed0fd29ab8d8915af1075",
+                                       "apply_check_exit_code":  0,
+                                       "apply_exit_code":  0
+                                   },
+                          "validator_output":  [
+                                                   "PASS: E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\dto-contract-change\\generated\\HarborMap.md",
+                                                   "feature_entries=4 detail_sections=7"
+                                               ],
+                          "exit_code":  0
+                      },
+                      {
+                          "scenario_id":  "provider-contract-change",
+                          "mode":  "document",
+                          "document_path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\provider-contract-change\\generated\\HarborMap.md",
+                          "validation_repository_root":  "G:\\Users\\FANCHA~1\\AppData\\Local\\Temp\\doc-gen-validator-revalidation-20260808-163155-5e5161b\\provider-contract-change\\repository",
+                          "diff":  {
+                                       "path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\fixtures\\harbor-map\\changes\\contract-change.diff",
+                                       "sha256":  "c672e8a7a72eda069774c2261c19d29a02abe6576d6c1dbd4ed68dee53329e65",
+                                       "apply_check_exit_code":  0,
+                                       "apply_exit_code":  0
+                                   },
+                          "validator_output":  [
+                                                   "PASS: E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\provider-contract-change\\generated\\HarborMap.md",
+                                                   "feature_entries=2 detail_sections=6"
+                                               ],
+                          "exit_code":  0
+                      },
+                      {
+                          "scenario_id":  "fact-conflict",
+                          "mode":  "document",
+                          "document_path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\fact-conflict\\generated\\HarborMap.md",
+                          "validation_repository_root":  "G:\\Users\\FANCHA~1\\AppData\\Local\\Temp\\doc-gen-validator-revalidation-20260808-163155-5e5161b\\fact-conflict\\repository",
+                          "diff":  {
+                                       "path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\fixtures\\harbor-map\\changes\\fact-conflict.diff",
+                                       "sha256":  "b990c0329fa33da86cc15b3825c4677e8a3079ed9e721ce6ff37dfaca082dd0d",
+                                       "apply_check_exit_code":  0,
+                                       "apply_exit_code":  0
+                                   },
+                          "validator_output":  [
+                                                   "PASS: E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\fact-conflict\\generated\\HarborMap.md",
+                                                   "feature_entries=3 detail_sections=5"
+                                               ],
+                          "exit_code":  0
+                      },
+                      {
+                          "scenario_id":  "incremental-update",
+                          "mode":  "document",
+                          "document_path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\incremental-update\\generated\\HarborMap.md",
+                          "validation_repository_root":  "G:\\Users\\FANCHA~1\\AppData\\Local\\Temp\\doc-gen-validator-revalidation-20260808-163155-5e5161b\\incremental-update\\repository",
+                          "diff":  {
+                                       "path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\fixtures\\harbor-map\\changes\\modify-feature.diff",
+                                       "sha256":  "559efcd68806c8b6350724ea1f8cd8a679edc3060b591a107c1245efd8cc86b7",
+                                       "apply_check_exit_code":  0,
+                                       "apply_exit_code":  0
+                                   },
+                          "validator_output":  [
+                                                   "PASS: E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\incremental-update\\generated\\HarborMap.md",
+                                                   "feature_entries=3 detail_sections=6"
+                                               ],
+                          "exit_code":  0
+                      },
+                      {
+                          "scenario_id":  "no-update-bugfix",
+                          "mode":  "decision-only",
+                          "document_expected":  false,
+                          "decision_path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\no-update-bugfix\\generated\\decision.md",
+                          "harbor_map_absent":  true,
+                          "exit_code":  0
+                      },
+                      {
+                          "scenario_id":  "no-update-refactor",
+                          "mode":  "decision-only",
+                          "document_expected":  false,
+                          "decision_path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\no-update-refactor\\generated\\decision.md",
+                          "harbor_map_absent":  true,
+                          "exit_code":  0
+                      }
+                  ],
+    "summary":  {
+                    "document_scenarios":  11,
+                    "decision_only_scenarios":  2,
+                    "passed":  13,
+                    "failed":  0,
+                    "final_status":  "pass"
+                }
+}

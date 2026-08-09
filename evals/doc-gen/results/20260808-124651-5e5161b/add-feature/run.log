@@ -1,0 +1,7 @@
+run_id=20260808-124651-5e5161b
+scenario_id=add-feature
+executor=final_add
+fork_turns=none
+validation_repository_root=materialized add-feature diff
+persisted_before_scoring=true
+temp_cleanup=completed

@@ -1,0 +1,15 @@
+{
+  "run_id": "20260808-114526-5e5161b",
+  "scenario_id": "add-feature",
+  "structure": {"status": "pass", "log": "structure-check.log", "feature_entries": 4, "detail_sections": 8, "repository_root": "materialized add-feature diff"},
+  "semantic": {
+    "status": "pass",
+    "success_assertions": [
+      {"assertion": "更新 feature_index、功能章节、Vue Expose 和验证入口", "status": "pass", "evidence": "文档新增 restricted-zone 功能索引与正文，Expose 包含 highlightRestrictedZone，验证表包含新增公开方法用例。"}
+    ],
+    "blocking_assertions": [
+      {"assertion": "不得读取或改写 HarborPage.vue", "status": "pass", "evidence": "文档未记录 HarborPage 实现或修改计划。"}
+    ]
+  },
+  "final_status": "pass"
+}

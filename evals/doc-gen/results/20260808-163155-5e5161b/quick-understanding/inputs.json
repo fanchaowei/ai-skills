@@ -1,0 +1,126 @@
+﻿{
+    "run_id":  "20260808-163155-5e5161b",
+    "scenario_id":  "quick-understanding",
+    "execution_mode":  "generate-then-read",
+    "skill_revision":  "working-tree-sha256:3acad42ccd1e0a74cdf5c82721c7762f1b0af184cbd32bb7278e433018277b48",
+    "skill_snapshot_sha256":  "3acad42ccd1e0a74cdf5c82721c7762f1b0af184cbd32bb7278e433018277b48",
+    "skill_files":  [
+                        {
+                            "path":  "src/doc-gen/references/ai-module-spec-template.md",
+                            "sha256":  "b81955f11a93a8c6a17c9f5819d43f4b2cca04a01572f00e0380979374295bab"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/complex-module.md",
+                            "sha256":  "faba8f8b33566dc0d73d30a8752830024263aad002364c0d682180d16f815dc2"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/component-detailed.md",
+                            "sha256":  "2077aa5592fdfdf42eb611c846a88ebb365f66ab179cec8b6187b0c2b6150f63"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/component-simple.md",
+                            "sha256":  "6f0399439df68d13b0bde716162017dac35ac0c439e6978ae272f894ac7f8af8"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/component-standard.md",
+                            "sha256":  "50dbe7c5454ce95ac2f056d38145097cfe3b07600748166c75a995fd58cfa39a"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/composable-detailed.md",
+                            "sha256":  "cc33df1bb40f24cf66fd9fb20c74ce0fab2b3ebd71a412f0aa49aea00cdbd9d6"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/composable-simple.md",
+                            "sha256":  "a8857e5baaac798c3f86ef990f81cfaf783821c5611e112d8e434c7214d20daf"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/error-handling.md",
+                            "sha256":  "771c7956bbc8b9e08f02e9a6204e28b06b6090ce017872713d0baf28274f540a"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/fact-model.md",
+                            "sha256":  "a744a8b35a998d702ab1cb18da190a8afa38087bd1e1e9cff4822fb63a8cc24f"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/incremental-update.md",
+                            "sha256":  "990f95c2cf7e90c17febc20b066535bcacd279fe5c61a33c03601cc7d9a6a665"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/index-maintenance.md",
+                            "sha256":  "4f934b9d07c4e03f6bf1bffd7ddaa950290467792ac3b3427eddb9e134261de8"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/migration-policy.md",
+                            "sha256":  "4ba21685ab00291ce81a848e82ca193e61bc18597652a2d8021e9a3147495619"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/module-detection.md",
+                            "sha256":  "98c382161e879a9f16321f38e262e161047ebe66536058370c5a518916b43762"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/output-quality.md",
+                            "sha256":  "99f97a7c794f6f027b3892ab2e28d6efb1487ad4693ab7054e9cb5dca2ac977c"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/repository-routing.md",
+                            "sha256":  "93568887c2b74d5838a785e12b6f55e77b0c456d516e4ecffa58bf1e61a3880b"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/service-standard.md",
+                            "sha256":  "714bfbc00c95452fb1f536d041415c27eef07d33bb86594769a7f16baecedc9e"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/store-detailed.md",
+                            "sha256":  "363c4864be60b426ebd232f8ce5fb29b9a5fd30dc45508a4b79ae1b0c651e930"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/store-simple.md",
+                            "sha256":  "c08502f6880b3ec0287943fb19cc3c0928999742ea63b44a222a92943855f1df"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/utility-detailed.md",
+                            "sha256":  "f40e57f6bc555218d3acbaa774349c17499b1240b7257a9855e2d3d207e84baf"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/utility-simple.md",
+                            "sha256":  "4f5229ff69dafc42c590ac2893223687e6aa91f86e3741d66ae01c63f8582975"
+                        },
+                        {
+                            "path":  "src/doc-gen/references/view-standard.md",
+                            "sha256":  "84299488ce4349a06751c84c93cad6079329021ff3e455e447a2c968edf2b3c2"
+                        },
+                        {
+                            "path":  "src/doc-gen/SKILL.md",
+                            "sha256":  "91bc50e3090f1060df977610dc8ea7226bf678d2cc723030de6a0761cce08d41"
+                        }
+                    ],
+    "input_paths":  [
+                        "G:\\Users\\FANCHA~1\\AppData\\Local\\Temp\\doc-gen-eval-20260808-163155-5e5161b-quick-understanding-writer\\skill",
+                        "G:\\Users\\FANCHA~1\\AppData\\Local\\Temp\\doc-gen-eval-20260808-163155-5e5161b-quick-understanding-writer\\fixture\\baseline",
+                        "G:\\Users\\FANCHA~1\\AppData\\Local\\Temp\\doc-gen-eval-20260808-163155-5e5161b-quick-understanding-reader\\excerpt.md",
+                        "G:\\Users\\FANCHA~1\\AppData\\Local\\Temp\\doc-gen-eval-20260808-163155-5e5161b-quick-understanding-reader\\prompt.md"
+                    ],
+    "read_scope":  "reader 只读取 YAML、电子围栏显隐编排、验证入口与证明范围",
+    "reader_sections":  [
+                            "yaml",
+                            "电子围栏显隐编排",
+                            "验证入口与证明范围"
+                        ],
+    "output_path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\quick-understanding\\generated\\HarborMap.md",
+    "reader_response_path":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\results\\20260808-163155-5e5161b\\quick-understanding\\raw-response.md",
+    "document_expected":  true,
+    "validation_repository_root":  "E:\\project\\skills\\ai-skills\\.worktrees\\doc-gen-v3\\evals\\doc-gen\\fixtures\\harbor-map\\baseline",
+    "isolation":  {
+                      "writer":  {
+                                     "executor":  "fresh subagent",
+                                     "fork_turns":  "none",
+                                     "temp_workspace":  "G:\\Users\\FANCHA~1\\AppData\\Local\\Temp\\doc-gen-eval-20260808-163155-5e5161b-quick-understanding-writer"
+                                 },
+                      "reader":  {
+                                     "executor":  "fresh subagent",
+                                     "fork_turns":  "none",
+                                     "temp_workspace":  "G:\\Users\\FANCHA~1\\AppData\\Local\\Temp\\doc-gen-eval-20260808-163155-5e5161b-quick-understanding-reader",
+                                     "excerpt_path":  "G:\\Users\\FANCHA~1\\AppData\\Local\\Temp\\doc-gen-eval-20260808-163155-5e5161b-quick-understanding-reader\\excerpt.md"
+                                 }
+                  }
+}

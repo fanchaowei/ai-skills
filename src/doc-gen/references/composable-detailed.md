@@ -1,69 +1,19 @@
-# {{MODULE_NAME}} - Composable/Hook
+# 详细 Composable/Hook 补充规则
 
-详细 composable 模板。用于包含多个内部 hook、事件监听、请求链路或复杂状态派生的模块。
+适用于包含多个内部 hook、事件监听、请求链路或复杂状态派生的模块。按功能域记录入口、状态、清理责任和验证入口。
 
-## 模块概述
-
-{{MODULE_OVERVIEW}}
-
-## AI 快速接手
-
-{{AI_QUICK_HANDOFF}}
-
-## AI 修改守则
-
-{{AI_CHANGE_RULES}}
-
-## 模块边界
-
-{{MODULE_BOUNDARY}}
-
-## 当前实现契约
-
-本章节承接 YAML `detail_sections.contract`。完整参数、返回值和副作用只写在正文，不写入 YAML。
+## 当前公开契约
 
 ### 参数
 
-{{PARAMETERS}}
+{{PARAMETERS_OR_NONE}}
 
 ### 返回值
 
-{{RETURNS}}
+{{RETURNS_OR_NONE}}
 
 ### 副作用
 
-{{SIDE_EFFECTS}}
+{{SIDE_EFFECTS_OR_NONE}}
 
-## 核心流程
-
-{{MERMAID_FLOW}}
-
-{{FLOW_EXPLANATION}}
-
-## 依赖关系
-
-{{DEPENDENCIES}}
-
-## 影响范围
-
-{{CHANGE_IMPACT_MATRIX}}
-
-## 已验证行为
-
-{{VERIFIED_BEHAVIORS}}
-
-## 修改指南
-
-{{CHANGE_GUIDE}}
-
-## 问题排查路径
-
-{{DEBUGGING_PATHS}}
-
-## 待确认项
-
-{{OPEN_QUESTIONS}}
-
-## 文档维护信息
-
-{{MAINTENANCE_INFO}}
+必要时按触发条件生成数据流、状态矩阵或诊断；不记录调用方实现。

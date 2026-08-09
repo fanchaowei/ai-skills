@@ -1,0 +1,26 @@
+﻿{
+    "run_id":  "20260808-163155-5e5161b",
+    "scenario_id":  "no-update-refactor",
+    "structure":  {
+                      "status":  "skipped",
+                      "document_expected":  false
+                  },
+    "semantic":  {
+                     "status":  "pass",
+                     "success_assertions":  [
+                                                {
+                                                    "assertion":  "输出无需更新模块文档；结果目录中只有判断报告，没有 HarborMap.md",
+                                                    "status":  "pass",
+                                                    "evidence":  "decision.md 明确结论为无需修改；generated 目录仅含 decision.md。"
+                                                }
+                                            ],
+                     "blocking_assertions":  [
+                                                 {
+                                                     "assertion":  "不得把私有函数拆分写成新的公开功能，不得生成、迁移、复制或改写模块文档",
+                                                     "status":  "pass",
+                                                     "evidence":  "报告将 loadZoneDtos/buildZoneModels 判定为内部辅助函数；没有生成 HarborMap.md。"
+                                                 }
+                                             ]
+                 },
+    "final_status":  "pass"
+}

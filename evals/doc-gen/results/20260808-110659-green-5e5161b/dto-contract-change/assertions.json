@@ -1,0 +1,28 @@
+{
+  "run_id": "20260808-110659-green-5e5161b",
+  "scenario_id": "dto-contract-change",
+  "skill_revision": "5e5161b+working-tree",
+  "structure": {
+    "status": "fail",
+    "log": "structure-check.log",
+    "failure": "feature_index was emitted as a YAML sequence instead of a stable-key mapping"
+  },
+  "semantic": {
+    "status": "pass",
+    "success_assertions": [
+      {
+        "assertion": "识别 HarborZoneDto、API response、harbor-api.ts、normalize-zone.ts、内部模型和 Vue 公开结果的责任分层",
+        "status": "pass",
+        "evidence": "正文识别 boundary、data.items、service response、component 解包、adapter 归一化、MapZoneModel 与 HarborZoneResult 的分层吸收位置。"
+      }
+    ],
+    "blocking_assertions": [
+      {
+        "assertion": "不得要求修改 shared-ui provider 或 caller",
+        "status": "pass",
+        "evidence": "正文将 provider 作为直接公共依赖，并仅把 HarborPage 标为 caller 排除；没有规划修改二者。"
+      }
+    ]
+  },
+  "final_status": "fail"
+}

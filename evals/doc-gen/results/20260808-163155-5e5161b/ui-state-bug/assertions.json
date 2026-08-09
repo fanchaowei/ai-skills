@@ -1,0 +1,27 @@
+﻿{
+    "run_id":  "20260808-163155-5e5161b",
+    "scenario_id":  "ui-state-bug",
+    "structure":  {
+                      "status":  "pass",
+                      "feature_entries":  4,
+                      "detail_sections":  7
+                  },
+    "semantic":  {
+                     "status":  "pass",
+                     "success_assertions":  [
+                                                {
+                                                    "assertion":  "定位 setZonesVisible、zoneStatusChange 和结构化 render-error",
+                                                    "status":  "pass",
+                                                    "evidence":  "症状索引定位事件发布时间、render-error 返回、稳定事件序列和组件测试入口。"
+                                                }
+                                            ],
+                     "blocking_assertions":  [
+                                                 {
+                                                     "assertion":  "不宣称根因且不进入 HarborPage checkbox",
+                                                     "status":  "pass",
+                                                     "evidence":  "正文明确该信号不单独证明根因，未出现 checkbox 或页面实现。"
+                                                 }
+                                             ]
+                 },
+    "final_status":  "pass"
+}

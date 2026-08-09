@@ -1,0 +1,9 @@
+run_id=20260808-114526-5e5161b
+scenario_id=ui-state-bug
+executor=green2_ui
+fork_turns=none
+input_scope=src/doc-gen + harbor-map baseline + ui-state-symptom.diff
+output=generated/HarborMap.md
+raw_response=raw-response.md
+persisted_before_scoring=true
+temp_cleanup=completed

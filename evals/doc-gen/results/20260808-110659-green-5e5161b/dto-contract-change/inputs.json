@@ -1,0 +1,22 @@
+{
+  "run_id": "20260808-110659-green-5e5161b",
+  "scenario_id": "dto-contract-change",
+  "skill_revision": "5e5161b+working-tree",
+  "input_paths": [
+    "src/doc-gen",
+    "evals/doc-gen/fixtures/harbor-map/baseline",
+    "evals/doc-gen/fixtures/harbor-map/changes/dto-change.diff"
+  ],
+  "isolation": {
+    "executor": "fresh subagent",
+    "fork_turns": "none",
+    "temp_workspace": "doc-gen-eval-20260808-110659-green-5e5161b-dto-contract-change",
+    "excluded_context": [
+      "design documents",
+      "implementation plan",
+      "assertion answers",
+      "baseline results",
+      "historical outputs"
+    ]
+  }
+}

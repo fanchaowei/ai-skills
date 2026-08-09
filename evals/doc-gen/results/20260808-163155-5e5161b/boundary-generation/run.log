@@ -1,0 +1,10 @@
+﻿run_id=20260808-163155-5e5161b
+scenario_id=boundary-generation
+skill_snapshot_sha256=3acad42ccd1e0a74cdf5c82721c7762f1b0af184cbd32bb7278e433018277b48
+executor=fresh subagent
+fork_turns=none
+temp_workspace=G:\Users\FANCHA~1\AppData\Local\Temp\doc-gen-eval-20260808-163155-5e5161b-boundary-generation
+validation_repository_root=G:\Users\FANCHA~1\AppData\Local\Temp\doc-gen-eval-20260808-163155-5e5161b-boundary-generation\fixture\baseline
+persisted_before_scoring=true
+temp_cleanup=completed
+

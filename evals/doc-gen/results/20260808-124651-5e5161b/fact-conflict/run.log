@@ -1,0 +1,7 @@
+run_id=20260808-124651-5e5161b
+scenario_id=fact-conflict
+executor=final_conflict
+fork_turns=none
+validation_repository_root=materialized fact-conflict diff
+persisted_before_scoring=true
+temp_cleanup=completed

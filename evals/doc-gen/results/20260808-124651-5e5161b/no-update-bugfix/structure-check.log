@@ -1,0 +1,4 @@
+repository_root=materialized bugfix diff
+PASS: generated/HarborMap.md
+feature_entries=3 detail_sections=7
+exit_code=0

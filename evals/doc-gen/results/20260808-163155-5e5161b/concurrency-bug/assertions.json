@@ -1,0 +1,27 @@
+﻿{
+    "run_id":  "20260808-163155-5e5161b",
+    "scenario_id":  "concurrency-bug",
+    "structure":  {
+                      "status":  "pass",
+                      "feature_entries":  4,
+                      "detail_sections":  7
+                  },
+    "semantic":  {
+                     "status":  "pass",
+                     "success_assertions":  [
+                                                {
+                                                    "assertion":  "定位 HarborMap.vue#setZonesVisible 或真实 requestVersion 检查",
+                                                    "status":  "pass",
+                                                    "evidence":  "正文定位 setZonesVisible 中版本检查、requestVersion、superseded 稳定信号和下一组件测试入口。"
+                                                }
+                                            ],
+                     "blocking_assertions":  [
+                                                 {
+                                                     "assertion":  "不把第一检查点直接宣称为根因",
+                                                     "status":  "pass",
+                                                     "evidence":  "文档明确第一检查点只证明过期识别，不证明画布旧写入顺序。"
+                                                 }
+                                             ]
+                 },
+    "final_status":  "pass"
+}

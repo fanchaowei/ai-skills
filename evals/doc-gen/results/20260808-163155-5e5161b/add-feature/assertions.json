@@ -1,0 +1,27 @@
+﻿{
+    "run_id":  "20260808-163155-5e5161b",
+    "scenario_id":  "add-feature",
+    "structure":  {
+                      "status":  "pass",
+                      "feature_entries":  4,
+                      "detail_sections":  8
+                  },
+    "semantic":  {
+                     "status":  "pass",
+                     "success_assertions":  [
+                                                {
+                                                    "assertion":  "更新 feature_index、功能章节、Vue Expose 和验证入口",
+                                                    "status":  "pass",
+                                                    "evidence":  "新增 highlightRestrictedZone 的 feature_index、功能小节、Expose 签名和专属验证行。"
+                                                }
+                                            ],
+                     "blocking_assertions":  [
+                                                 {
+                                                     "assertion":  "不读取或改写 HarborPage.vue",
+                                                     "status":  "pass",
+                                                     "evidence":  "HarborPage 只作为 caller 排除，未记录其实现、状态或修改。"
+                                                 }
+                                             ]
+                 },
+    "final_status":  "pass"
+}

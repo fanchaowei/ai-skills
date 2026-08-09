@@ -1,0 +1,130 @@
+{
+  "skill_name": "doc-gen",
+  "skill_path": "src/doc-gen",
+  "fixture_root": "evals/doc-gen/fixtures/harbor-map",
+  "base_assertions": [
+    "Frontmatter conforms to the constrained ai-module-spec v3 YAML schema",
+    "YAML contains doc_type: ai-module-spec and spec_version: 3.0",
+    "YAML contains feature_index and fixed detail_sections keys",
+    "Every feature entry path, optional symbol, body section, and detail section is reachable",
+    "Body excludes callers, historical implementation records, and transient verification status"
+  ],
+  "evals": [
+    {
+      "id": "boundary-generation",
+      "prompt": "请为 apps/harbor-system/src/components/harbor-map 生成模块文档，并说明模块边界、公开契约、电子围栏入口和验证范围。",
+      "files": ["evals/doc-gen/fixtures/harbor-map/baseline"],
+      "read_limit": "完整 fixture；生成后只用 YAML、模块边界和电子围栏功能章节评分",
+      "success_assertions": [
+        "文档记录 HarborMap owned files、直接公共依赖和明确排除项",
+        "Vue 公开契约包含 Props、Emits、Slots 和 Expose",
+        "电子围栏入口定位到仓库根相对 HarborMap.vue#setZonesVisible"
+      ],
+      "blocking_assertions": [
+        "不得把 HarborPage.vue 的 checkbox 回退写成 HarborMap 当前事实",
+        "不得把测试期望或 passed 状态写成当前实现事实"
+      ]
+    },
+    {
+      "id": "quick-understanding",
+      "execution_mode": "generate-then-read",
+      "generator_prompt": "请为 apps/harbor-system/src/components/harbor-map 生成 ai-module-spec v3 模块文档。",
+      "prompt": "只根据提供的 YAML、电子围栏功能小节和验证入口小节，说明 HarborMap 的用途、setZonesVisible 真实入口和该功能的最小验证范围。不得读取代码、Skill 或完整文档。",
+      "files": ["evals/doc-gen/fixtures/harbor-map/baseline"],
+      "reader_sections": ["yaml", "电子围栏显隐编排", "验证入口与证明范围"],
+      "read_limit": "YAML 和两个正文小节；reader 不接收代码、Skill 或完整文档",
+      "success_assertions": ["说明模块用途、setZonesVisible 入口和电子围栏功能的最小验证范围"],
+      "blocking_assertions": ["不得声称读取了代码、Skill、模块边界或其他正文小节"]
+    },
+    {
+      "id": "add-feature",
+      "prompt": "根据 add-feature.diff 更新现有 HarborMap 模块文档。",
+      "files": ["evals/doc-gen/fixtures/harbor-map/baseline", "evals/doc-gen/fixtures/harbor-map/changes/add-feature.diff"],
+      "read_limit": "变化路径、YAML、受影响功能和契约章节",
+      "success_assertions": ["更新 feature_index、功能章节、Vue Expose 和验证入口"],
+      "blocking_assertions": ["不得读取或改写 HarborPage.vue"]
+    },
+    {
+      "id": "modify-feature",
+      "prompt": "根据 modify-feature.diff 更新电子围栏规则。",
+      "files": ["evals/doc-gen/fixtures/harbor-map/baseline", "evals/doc-gen/fixtures/harbor-map/changes/modify-feature.diff"],
+      "read_limit": "变化路径和电子围栏相关章节",
+      "success_assertions": ["只更新最少点数、数据转换和验证入口"],
+      "blocking_assertions": ["不得重写模块边界或无关 Vue 契约"]
+    },
+    {
+      "id": "remove-feature",
+      "prompt": "根据 remove-feature.diff 删除电子围栏功能并更新模块文档。",
+      "files": ["evals/doc-gen/fixtures/harbor-map/baseline", "evals/doc-gen/fixtures/harbor-map/changes/remove-feature.diff"],
+      "read_limit": "变化路径、功能索引、Vue Expose、依赖和删除边界",
+      "success_assertions": ["删除失效功能索引、功能章节和 Expose，保留 shared-ui 直接公共依赖边界"],
+      "blocking_assertions": ["不得规划 caller 修改或删除 shared-ui provider"]
+    },
+    {
+      "id": "ui-state-bug",
+      "prompt": "围栏渲染失败，但 UI 仍显示已开启。结合 ui-state-symptom.diff 给出第一检查点、稳定信号、故障边界和下一验证入口。",
+      "files": ["evals/doc-gen/fixtures/harbor-map/baseline", "evals/doc-gen/fixtures/harbor-map/changes/ui-state-symptom.diff"],
+      "read_limit": "YAML、诊断索引和电子围栏功能章节",
+      "success_assertions": ["定位 HarborMap.vue#setZonesVisible、zoneStatusChange 和结构化 render-error"],
+      "blocking_assertions": ["不得宣称已确定根因，不得进入 HarborPage checkbox 实现"]
+    },
+    {
+      "id": "concurrency-bug",
+      "prompt": "旧请求结果覆盖了新请求。请定位数据/并发 Bug 的第一检查点、稳定信号、故障边界和下一验证入口。",
+      "files": ["evals/doc-gen/fixtures/harbor-map/baseline"],
+      "read_limit": "YAML、诊断索引和电子围栏功能章节",
+      "success_assertions": ["定位 HarborMap.vue#setZonesVisible 或真实 requestVersion 检查"],
+      "blocking_assertions": ["不得把第一检查点直接宣称为根因"]
+    },
+    {
+      "id": "dto-contract-change",
+      "prompt": "根据 dto-change.diff 分析后端 DTO 与响应契约变化的模块内吸收位置，并更新文档。",
+      "files": ["evals/doc-gen/fixtures/harbor-map/baseline", "evals/doc-gen/fixtures/harbor-map/changes/dto-change.diff"],
+      "read_limit": "变化路径、数据流、相关功能和契约章节",
+      "success_assertions": ["识别 HarborZoneDto、API response、harbor-api.ts、normalize-zone.ts、内部模型和 Vue 公开结果的责任分层"],
+      "blocking_assertions": ["不得要求修改 shared-ui provider 或 caller"]
+    },
+    {
+      "id": "provider-contract-change",
+      "prompt": "根据 contract-change.diff 分析 provider 公开契约变化，并更新 HarborMap 文档。",
+      "files": ["evals/doc-gen/fixtures/harbor-map/baseline", "evals/doc-gen/fixtures/harbor-map/changes/contract-change.diff"],
+      "read_limit": "provider public 声明、目标模块真实使用点和相关验证章节",
+      "success_assertions": ["识别 MapCanvasExpose/MapZoneCommandResult、partial 返回和模块内吸收位置"],
+      "blocking_assertions": ["不得读取 provider 内部实现或扩展到 caller"]
+    },
+    {
+      "id": "fact-conflict",
+      "prompt": "根据 fact-conflict.diff 更新 HarborMap 文档。",
+      "files": ["evals/doc-gen/fixtures/harbor-map/baseline", "evals/doc-gen/fixtures/harbor-map/changes/fact-conflict.diff"],
+      "read_limit": "变化测试、生产实现和冲突章节",
+      "success_assertions": ["生成模块内事实冲突并保留生产实现为当前代码证据"],
+      "blocking_assertions": ["不得把测试期望虚构为当前事实"]
+    },
+    {
+      "id": "incremental-update",
+      "prompt": "使用提供的 v3 HarborMap.md 和 modify-feature.diff 执行增量更新，只修改围栏数据规范化及其必要验证内容，保持模块边界、Vue 公开契约和直接公共依赖原文不变。",
+      "files": ["evals/doc-gen/fixtures/harbor-map/baseline", "evals/doc-gen/fixtures/harbor-map/v3/HarborMap.md", "evals/doc-gen/fixtures/harbor-map/changes/modify-feature.diff"],
+      "read_limit": "变化路径、对应 feature_index、围栏数据规范化和验证章节",
+      "success_assertions": ["将最少有效点数从 3 更新为 4，并补充 adapter 验证入口；模块边界、Vue 公开契约和直接公共依赖保持原文"],
+      "blocking_assertions": ["不得写入提交历史、caller 事实或无条件重写全文"]
+    },
+    {
+      "id": "no-update-bugfix",
+      "execution_mode": "decision-only",
+      "prompt": "根据已有 v3 HarborMap.md 和 bugfix-no-doc-change.diff 判断是否需要更新模块文档。只输出判断报告，不得生成、迁移、复制或改写模块文档。",
+      "files": ["evals/doc-gen/fixtures/harbor-map/baseline", "evals/doc-gen/fixtures/harbor-map/v3/HarborMap.md", "evals/doc-gen/fixtures/harbor-map/changes/bugfix-no-doc-change.diff"],
+      "read_limit": "变化路径、相关功能不变量和导航",
+      "success_assertions": ["输出无需更新，并说明实现恢复已记录的最后调用获胜契约；结果目录中只有判断报告，没有 HarborMap.md"],
+      "blocking_assertions": ["不得生成、迁移、复制或改写模块文档"]
+    },
+    {
+      "id": "no-update-refactor",
+      "execution_mode": "decision-only",
+      "prompt": "根据已有 v3 HarborMap.md 和 internal-refactor.diff 判断是否需要更新模块文档。只输出判断报告，不得生成、迁移、复制或改写模块文档。",
+      "files": ["evals/doc-gen/fixtures/harbor-map/baseline", "evals/doc-gen/fixtures/harbor-map/v3/HarborMap.md", "evals/doc-gen/fixtures/harbor-map/changes/internal-refactor.diff"],
+      "read_limit": "变化路径、真实入口、公开契约和导航",
+      "success_assertions": ["输出无需更新模块文档；结果目录中只有判断报告，没有 HarborMap.md"],
+      "blocking_assertions": ["不得把私有函数拆分写成新的公开功能，不得生成、迁移、复制或改写模块文档"]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+repository_root=evals/doc-gen/fixtures/harbor-map/baseline
+PASS: generated/HarborMap.md
+feature_entries=5 detail_sections=7
+exit_code=0

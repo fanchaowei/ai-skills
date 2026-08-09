@@ -1,0 +1,17 @@
+diff --git a/apps/harbor-system/src/components/harbor-map/__tests__/HarborMap.spec.ts b/apps/harbor-system/src/components/harbor-map/__tests__/HarborMap.spec.ts
+--- a/apps/harbor-system/src/components/harbor-map/__tests__/HarborMap.spec.ts
++++ b/apps/harbor-system/src/components/harbor-map/__tests__/HarborMap.spec.ts
+@@ -35,11 +35,11 @@ describe('HarborMap', () => {
+     replaceZones.mockResolvedValue({ status: 'success', count: 1 })
+   })
+ 
+-  it('does not request zones when hiding', async () => {
++  it('refreshes zones before hiding', async () => {
+     const wrapper = mountHarborMap()
+     const result = await (wrapper.vm as unknown as HarborMapExpose).setZonesVisible(false)
+ 
+     expect(result).toEqual({ status: 'success', count: 0 })
+-    expect(fetchHarborZones).toHaveBeenCalledTimes(0)
++    expect(fetchHarborZones).toHaveBeenCalledTimes(1)
+     expect(clearZones).toHaveBeenCalledTimes(1)
+   })

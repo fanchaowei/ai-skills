@@ -1,71 +1,23 @@
-# {{MODULE_NAME}} - Vue 组件
+# 简单 Vue 组件补充规则
 
-简单组件模板。正文应保持短而可跳读；默认不生成 Mermaid，不强制生成具体排查步骤。
+使用通用 v3 骨架，正文保持短而可跳读。没有可靠链路时不生成 Mermaid 或诊断章节。
 
-## 模块概述
-
-{{MODULE_OVERVIEW}}
-
-## AI 快速接手
-
-{{AI_QUICK_HANDOFF}}
-
-## AI 修改守则
-
-{{AI_CHANGE_RULES}}
-
-## 模块边界
-
-{{MODULE_BOUNDARY}}
-
-## 当前实现契约
-
-本章节承接 YAML `detail_sections.contract`。完整 props、emits、slots 和 expose 只写在正文，不写入 YAML。
+## Vue 公开契约
 
 ### Props
 
-{{PROPS}}
+{{PROPS_OR_NONE}}
 
 ### Emits
 
-{{EVENTS}}
+{{EMITS_OR_NONE}}
 
 ### Slots
 
-{{SLOTS}}
+{{SLOTS_OR_NONE}}
 
 ### Expose
 
-{{EXPOSE_METHODS}}
+{{EXPOSE_OR_NONE}}
 
-## 核心流程
-
-{{CORE_FLOW}}
-
-## 依赖关系
-
-{{DEPENDENCIES}}
-
-## 影响范围
-
-{{IMPACT_SCOPE}}
-
-## 已验证行为
-
-{{VERIFIED_BEHAVIORS}}
-
-## 修改指南
-
-{{CHANGE_GUIDE}}
-
-## 问题排查路径
-
-{{DEBUGGING_PATHS}}
-
-## 待确认项
-
-{{OPEN_QUESTIONS}}
-
-## 文档维护信息
-
-{{MAINTENANCE_INFO}}
+四类接口必须全部扫描并显式出现；没有公开项时写“无”。普通 export、内部类型、store、adapter 或其他可导出内容不属于 Vue 公开契约。

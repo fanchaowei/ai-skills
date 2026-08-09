@@ -1,0 +1,33 @@
+{
+  "run_id": "20260808-110659-green-5e5161b",
+  "scenario_id": "ui-state-bug",
+  "skill_revision": "5e5161b+working-tree",
+  "structure": {
+    "status": "fail",
+    "log": "structure-check.log",
+    "failure": "feature_index was emitted as a YAML sequence instead of a stable-key mapping"
+  },
+  "semantic": {
+    "status": "pass",
+    "success_assertions": [
+      {
+        "assertion": "定位 HarborMap.vue#setZonesVisible、zoneStatusChange 和结构化 render-error",
+        "status": "pass",
+        "evidence": "诊断章节将 setZonesVisible 的 replaceZones 前后作为第一检查点，并以 render-error 与 zoneStatusChange('visible') 的矛盾作为稳定信号。"
+      }
+    ],
+    "blocking_assertions": [
+      {
+        "assertion": "不得宣称已确定根因",
+        "status": "pass",
+        "evidence": "正文明确第一检查点不等同于已确认根因。"
+      },
+      {
+        "assertion": "不得进入 HarborPage checkbox 实现",
+        "status": "pass",
+        "evidence": "故障边界明确外部控件消费信号不属于本模块，未记录 HarborPage checkbox 实现。"
+      }
+    ]
+  },
+  "final_status": "fail"
+}

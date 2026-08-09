@@ -1,67 +1,21 @@
-# {{MODULE_NAME}} - 工具函数
+# 简单工具函数补充规则
 
-简单工具函数模板。保持关键签名和示例短小；默认不生成 Mermaid，不强制生成具体排查步骤。
+使用通用 v3 骨架，保持签名、输入输出和边界行为短小，不强制生成流程图或诊断章节。
 
-## 模块概述
-
-{{MODULE_OVERVIEW}}
-
-## AI 快速接手
-
-{{AI_QUICK_HANDOFF}}
-
-## AI 修改守则
-
-{{AI_CHANGE_RULES}}
-
-## 模块边界
-
-{{MODULE_BOUNDARY}}
-
-## 当前实现契约
-
-本章节承接 YAML `detail_sections.contract`。完整公开签名、输入、输出和副作用只写在正文，不写入 YAML。
+## 当前公开契约
 
 ### 公开签名
 
-{{PUBLIC_SIGNATURES}}
+{{PUBLIC_SIGNATURES_OR_NONE}}
 
 ### 输入
 
-{{INPUTS}}
+{{INPUTS_OR_NONE}}
 
 ### 输出
 
-{{OUTPUTS}}
+{{OUTPUTS_OR_NONE}}
 
 ### 副作用
 
-{{SIDE_EFFECTS}}
-
-## 依赖关系
-
-{{DEPENDENCIES}}
-
-## 影响范围
-
-{{IMPACT_SCOPE}}
-
-## 已验证行为
-
-{{VERIFIED_BEHAVIORS}}
-
-## 修改指南
-
-{{CHANGE_GUIDE}}
-
-## 问题排查路径
-
-{{DEBUGGING_PATHS}}
-
-## 待确认项
-
-{{OPEN_QUESTIONS}}
-
-## 文档维护信息
-
-{{MAINTENANCE_INFO}}
+{{SIDE_EFFECTS_OR_NONE}}

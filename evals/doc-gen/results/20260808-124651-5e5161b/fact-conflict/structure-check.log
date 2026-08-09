@@ -1,0 +1,4 @@
+repository_root=materialized fact-conflict diff
+PASS: generated/HarborMap.md
+feature_entries=1 detail_sections=5
+exit_code=0

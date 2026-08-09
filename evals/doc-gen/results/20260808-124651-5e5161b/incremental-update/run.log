@@ -1,0 +1,7 @@
+run_id=20260808-124651-5e5161b
+scenario_id=incremental-update
+executor=final_incremental
+fork_turns=none
+validation_repository_root=terminal materialized remove-feature state
+persisted_before_scoring=true
+temp_cleanup=completed

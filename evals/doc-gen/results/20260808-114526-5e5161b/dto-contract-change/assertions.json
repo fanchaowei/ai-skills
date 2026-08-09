@@ -1,0 +1,15 @@
+{
+  "run_id": "20260808-114526-5e5161b",
+  "scenario_id": "dto-contract-change",
+  "structure": {"status": "pass", "log": "structure-check.log", "feature_entries": 2, "detail_sections": 6},
+  "semantic": {
+    "status": "pass",
+    "success_assertions": [
+      {"assertion": "识别 HarborZoneDto、API response、harbor-api.ts、normalize-zone.ts、内部模型和 Vue 公开结果的责任分层", "status": "pass", "evidence": "数据责任表明确 types DTO、service response、组件 data.items 解包、adapter boundary 解析、MapZoneModel 与 HarborZoneResult 的吸收边界。"}
+    ],
+    "blocking_assertions": [
+      {"assertion": "不得要求修改 shared-ui provider 或 caller", "status": "pass", "evidence": "正文明确后端字段和包裹不应传播到 packages/shared-ui；HarborPage 仅作为 caller 排除，未规划修改。"}
+    ]
+  },
+  "final_status": "pass"
+}

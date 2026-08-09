@@ -1,0 +1,42 @@
+diff --git a/apps/harbor-system/src/components/harbor-map/types.ts b/apps/harbor-system/src/components/harbor-map/types.ts
+--- a/apps/harbor-system/src/components/harbor-map/types.ts
++++ b/apps/harbor-system/src/components/harbor-map/types.ts
+@@ -13,4 +13,5 @@ export type HarborZoneResult =
+ 
+ export interface HarborMapExpose {
+   setZonesVisible(visible: boolean): Promise<HarborZoneResult>
++  highlightRestrictedZone(id: string): Promise<HarborZoneResult>
+ }
+diff --git a/apps/harbor-system/src/components/harbor-map/HarborMap.vue b/apps/harbor-system/src/components/harbor-map/HarborMap.vue
+--- a/apps/harbor-system/src/components/harbor-map/HarborMap.vue
++++ b/apps/harbor-system/src/components/harbor-map/HarborMap.vue
+@@ -66,7 +66,11 @@ async function setZonesVisible(visible: boolean): Promise<HarborZoneResult> {
+   }
+ }
+ 
+-defineExpose<HarborMapExpose>({ setZonesVisible })
++async function highlightRestrictedZone(_id: string): Promise<HarborZoneResult> {
++  return setZonesVisible(true)
++}
++
++defineExpose<HarborMapExpose>({ setZonesVisible, highlightRestrictedZone })
+ </script>
+ 
+ <template>
+diff --git a/apps/harbor-system/src/components/harbor-map/__tests__/HarborMap.spec.ts b/apps/harbor-system/src/components/harbor-map/__tests__/HarborMap.spec.ts
+--- a/apps/harbor-system/src/components/harbor-map/__tests__/HarborMap.spec.ts
++++ b/apps/harbor-system/src/components/harbor-map/__tests__/HarborMap.spec.ts
+@@ -82,4 +82,13 @@ describe('HarborMap', () => {
+     await (wrapper.vm as unknown as HarborMapExpose).setZonesVisible(false)
+     expect(wrapper.emitted('zoneStatusChange')).toEqual([['hidden']])
+   })
++
++  it('highlights a restricted zone through the public expose contract', async () => {
++    vi.mocked(fetchHarborZones).mockResolvedValue({
++      code: 200,
++      data: [{ zone_id: 'restricted', enabled: '0', points: '1,1_2,2_3,3' }],
++    })
++    const exposed = mountHarborMap().vm as unknown as HarborMapExpose
++    await expect(exposed.highlightRestrictedZone('restricted')).resolves.toEqual({ status: 'success', count: 1 })
++  })
+ })

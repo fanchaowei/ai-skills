@@ -1,0 +1,29 @@
+diff --git a/apps/harbor-system/src/components/harbor-map/adapters/normalize-zone.ts b/apps/harbor-system/src/components/harbor-map/adapters/normalize-zone.ts
+--- a/apps/harbor-system/src/components/harbor-map/adapters/normalize-zone.ts
++++ b/apps/harbor-system/src/components/harbor-map/adapters/normalize-zone.ts
+@@ -13,5 +13,5 @@ export function normalizeZone(dto: HarborZoneDto): MapZoneModel | null {
+     )
+ 
+-  if (coordinates.length < 3) return null
++  if (coordinates.length < 4) return null
+   return { id: dto.zone_id, coordinates }
+ }
+diff --git a/apps/harbor-system/src/components/harbor-map/adapters/__tests__/normalize-zone.spec.ts b/apps/harbor-system/src/components/harbor-map/adapters/__tests__/normalize-zone.spec.ts
+new file mode 100644
+--- /dev/null
++++ b/apps/harbor-system/src/components/harbor-map/adapters/__tests__/normalize-zone.spec.ts
+@@ -0,0 +1,14 @@
++import { describe, expect, it } from 'vitest'
++import { normalizeZone } from '../normalize-zone'
++
++describe('normalizeZone', () => {
++  it('requires four valid boundary points', () => {
++    expect(normalizeZone({ zone_id: 'three', enabled: '0', points: '1,1_2,2_3,3' })).toBeNull()
++    expect(
++      normalizeZone({ zone_id: 'four', enabled: '0', points: '1,1_2,2_3,3_4,4' }),
++    ).toEqual({
++      id: 'four',
++      coordinates: [[1, 1], [2, 2], [3, 3], [4, 4]],
++    })
++  })
++})

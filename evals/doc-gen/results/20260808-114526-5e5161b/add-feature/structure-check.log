@@ -1,0 +1,4 @@
+PASS: evals/doc-gen/results/20260808-114526-5e5161b/add-feature/generated/HarborMap.md
+repository_root=isolated baseline copy with add-feature.diff applied
+feature_entries=4 detail_sections=8
+exit_code=0

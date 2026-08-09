@@ -1,0 +1,27 @@
+﻿{
+    "run_id":  "20260808-163155-5e5161b",
+    "scenario_id":  "fact-conflict",
+    "structure":  {
+                      "status":  "pass",
+                      "feature_entries":  3,
+                      "detail_sections":  5
+                  },
+    "semantic":  {
+                     "status":  "pass",
+                     "success_assertions":  [
+                                                {
+                                                    "assertion":  "生成模块内事实冲突并保留生产实现为当前代码证据",
+                                                    "status":  "pass",
+                                                    "evidence":  "模块内事实冲突表分别记录 HarborMap.vue 隐藏分支不请求与测试期望请求一次，且将生产实现标为当前代码证据。"
+                                                }
+                                            ],
+                     "blocking_assertions":  [
+                                                 {
+                                                     "assertion":  "不得把测试期望虚构为当前事实",
+                                                     "status":  "pass",
+                                                     "evidence":  "电子围栏显隐章节明确不固化冲突顺序，测试期望仅出现在事实冲突和证明范围中。"
+                                                 }
+                                             ]
+                 },
+    "final_status":  "pass"
+}

@@ -1,71 +1,23 @@
-# {{MODULE_NAME}} - 工具函数
+# 详细工具模块补充规则
 
-详细工具模块模板。用于包含多函数、类型约束、边界处理或重要兼容性的工具目录。
+适用于多函数、类型约束、边界处理或重要兼容性的工具目录。按稳定功能域记录公开签名、语义转换和验证入口。
 
-## 模块概述
-
-{{MODULE_OVERVIEW}}
-
-## AI 快速接手
-
-{{AI_QUICK_HANDOFF}}
-
-## AI 修改守则
-
-{{AI_CHANGE_RULES}}
-
-## 模块边界
-
-{{MODULE_BOUNDARY}}
-
-## 当前实现契约
-
-本章节承接 YAML `detail_sections.contract`。完整公开签名、输入、输出和副作用只写在正文，不写入 YAML。
+## 当前公开契约
 
 ### 公开签名
 
-{{PUBLIC_SIGNATURES}}
+{{PUBLIC_SIGNATURES_OR_NONE}}
 
 ### 输入
 
-{{INPUTS}}
+{{INPUTS_OR_NONE}}
 
 ### 输出
 
-{{OUTPUTS}}
+{{OUTPUTS_OR_NONE}}
 
 ### 副作用
 
-{{SIDE_EFFECTS}}
+{{SIDE_EFFECTS_OR_NONE}}
 
-## 核心流程
-
-{{CORE_FLOW}}
-
-## 依赖关系
-
-{{DEPENDENCIES}}
-
-## 影响范围
-
-{{CHANGE_IMPACT_MATRIX}}
-
-## 已验证行为
-
-{{VERIFIED_BEHAVIORS}}
-
-## 修改指南
-
-{{CHANGE_GUIDE}}
-
-## 问题排查路径
-
-{{DEBUGGING_PATHS}}
-
-## 待确认项
-
-{{OPEN_QUESTIONS}}
-
-## 文档维护信息
-
-{{MAINTENANCE_INFO}}
+内部 helper 和调用方用法不进入公开契约；复杂分支只在确有必要时生成小型流程说明。

@@ -1,0 +1,18 @@
+{
+  "run_id": "20260808-114526-5e5161b",
+  "scenario_id": "boundary-generation",
+  "structure": {"status": "pass", "log": "structure-check.log", "feature_entries": 3, "detail_sections": 7},
+  "semantic": {
+    "status": "pass",
+    "success_assertions": [
+      {"assertion": "文档记录 HarborMap owned files、直接公共依赖和明确排除项", "status": "pass", "evidence": "模块边界区分 owned、direct public dependency 和 caller，并明确无条件排除 caller 状态、回退、测试和修改方式。"},
+      {"assertion": "Vue 公开契约包含 Props、Emits、Slots 和 Expose", "status": "pass", "evidence": "当前公开契约列出 initialZoom、zoneStatusChange、toolbar/default slot 和 setZonesVisible expose。"},
+      {"assertion": "电子围栏入口定位到仓库根相对 HarborMap.vue#setZonesVisible", "status": "pass", "evidence": "feature_index.zone_visibility 与电子围栏正文均指向 apps/harbor-system/src/components/harbor-map/HarborMap.vue#setZonesVisible。"}
+    ],
+    "blocking_assertions": [
+      {"assertion": "不得把 HarborPage.vue 的 checkbox 回退写成 HarborMap 当前事实", "status": "pass", "evidence": "正文只作通用 caller 排除，没有 HarborPage 或 checkbox 实现事实。"},
+      {"assertion": "不得把测试期望或 passed 状态写成当前实现事实", "status": "pass", "evidence": "验证章节区分测试预期、能证明与不能证明，未记录瞬时执行状态。"}
+    ]
+  },
+  "final_status": "pass"
+}

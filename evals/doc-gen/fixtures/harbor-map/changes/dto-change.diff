@@ -1,0 +1,50 @@
+diff --git a/apps/harbor-system/src/components/harbor-map/types.ts b/apps/harbor-system/src/components/harbor-map/types.ts
+--- a/apps/harbor-system/src/components/harbor-map/types.ts
++++ b/apps/harbor-system/src/components/harbor-map/types.ts
+@@ -2,6 +2,6 @@ export interface HarborZoneDto {
+   zone_id: string
+   enabled: '0' | '1'
+-  points: string
++  boundary: string
+ }
+ 
+ export type HarborZoneResult =
+diff --git a/apps/harbor-system/src/components/harbor-map/services/harbor-api.ts b/apps/harbor-system/src/components/harbor-map/services/harbor-api.ts
+--- a/apps/harbor-system/src/components/harbor-map/services/harbor-api.ts
++++ b/apps/harbor-system/src/components/harbor-map/services/harbor-api.ts
+@@ -2,9 +2,9 @@ import type { HarborZoneDto } from '../types'
+ 
+ export interface HarborApiResponse {
+   code: number
+-  data: HarborZoneDto[]
++  data: { items: HarborZoneDto[] }
+ }
+ 
+ export async function fetchHarborZones(): Promise<HarborApiResponse> {
+-  return { code: 200, data: [] }
++  return { code: 200, data: { items: [] } }
+ }
+diff --git a/apps/harbor-system/src/components/harbor-map/adapters/normalize-zone.ts b/apps/harbor-system/src/components/harbor-map/adapters/normalize-zone.ts
+--- a/apps/harbor-system/src/components/harbor-map/adapters/normalize-zone.ts
++++ b/apps/harbor-system/src/components/harbor-map/adapters/normalize-zone.ts
+@@ -4,7 +4,7 @@ import type { HarborZoneDto } from '../types'
+ export function normalizeZone(dto: HarborZoneDto): MapZoneModel | null {
+   if (dto.enabled !== '0' || dto.zone_id.trim() === '') return null
+ 
+-  const coordinates = dto.points
++  const coordinates = dto.boundary
+     .split('_')
+     .map((point) => point.split(',').map(Number))
+     .filter(
+diff --git a/apps/harbor-system/src/components/harbor-map/HarborMap.vue b/apps/harbor-system/src/components/harbor-map/HarborMap.vue
+--- a/apps/harbor-system/src/components/harbor-map/HarborMap.vue
++++ b/apps/harbor-system/src/components/harbor-map/HarborMap.vue
+@@ -47,7 +47,7 @@ async function setZonesVisible(visible: boolean): Promise<HarborZoneResult> {
+       return { status: 'request-error' }
+     }
+ 
+-    const zones = response.data.map(normalizeZone).filter((zone) => zone !== null)
++    const zones = response.data.items.map(normalizeZone).filter((zone) => zone !== null)
+     if (zones.length === 0) return { status: 'empty' }
+ 
+     const result = await mapCanvas.replaceZones(zones)

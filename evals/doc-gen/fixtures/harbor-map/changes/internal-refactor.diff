@@ -1,0 +1,51 @@
+diff --git a/apps/harbor-system/src/components/harbor-map/HarborMap.vue b/apps/harbor-system/src/components/harbor-map/HarborMap.vue
+index 9100a61..3cae6b5 100644
+--- a/apps/harbor-system/src/components/harbor-map/HarborMap.vue
++++ b/apps/harbor-system/src/components/harbor-map/HarborMap.vue
+@@ -1,10 +1,10 @@
+ <script setup lang="ts">
+ import { ref } from 'vue'
+ import MapCanvas from '@shared/ui/map-canvas'
+-import type { MapCanvasExpose } from '@shared/ui/map-canvas/public'
++import type { MapCanvasExpose, MapZoneModel } from '@shared/ui/map-canvas/public'
+ import { normalizeZone } from './adapters/normalize-zone'
+ import { fetchHarborZones } from './services/harbor-api'
+-import type { HarborMapExpose, HarborZoneResult } from './types'
++import type { HarborMapExpose, HarborZoneDto, HarborZoneResult } from './types'
+ 
+ withDefaults(
+   defineProps<{
+@@ -22,6 +22,15 @@ const emit = defineEmits<{
+ const mapCanvasRef = ref<MapCanvasExpose>()
+ let requestVersion = 0
+ 
++async function loadZoneDtos(): Promise<HarborZoneDto[] | null> {
++  const response = await fetchHarborZones()
++  return response.code === 200 ? response.data : null
++}
++
++function buildZoneModels(dtos: HarborZoneDto[]): MapZoneModel[] {
++  return dtos.map(normalizeZone).filter((zone): zone is MapZoneModel => zone !== null)
++}
++
+ async function setZonesVisible(visible: boolean): Promise<HarborZoneResult> {
+   const currentVersion = ++requestVersion
+   const mapCanvas = mapCanvasRef.value
+@@ -40,14 +49,14 @@ async function setZonesVisible(visible: boolean): Promise<HarborZoneResult> {
+   }
+ 
+   try {
+-    const response = await fetchHarborZones()
++    const dtos = await loadZoneDtos()
+     if (currentVersion !== requestVersion) return { status: 'superseded' }
+-    if (response.code !== 200) {
++    if (dtos === null) {
+       emit('zoneStatusChange', 'error')
+       return { status: 'request-error' }
+     }
+ 
+-    const zones = response.data.map(normalizeZone).filter((zone) => zone !== null)
++    const zones = buildZoneModels(dtos)
+     if (zones.length === 0) return { status: 'empty' }
+ 
+     const result = await mapCanvas.replaceZones(zones)

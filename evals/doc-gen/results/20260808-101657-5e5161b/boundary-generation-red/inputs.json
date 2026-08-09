@@ -1,0 +1,8 @@
+{
+  "run_id": "20260808-101657-5e5161b",
+  "scenario_id": "boundary-generation-red",
+  "skill_revision": "5e5161b",
+  "skill_path": "temporary/skill",
+  "fixture_path": "temporary/fixture",
+  "context_policy": "fresh agent with fork_turns none; only prompt, v2 skill, and baseline fixture"
+}

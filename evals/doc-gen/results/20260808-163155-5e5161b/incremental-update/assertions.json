@@ -1,0 +1,27 @@
+﻿{
+    "run_id":  "20260808-163155-5e5161b",
+    "scenario_id":  "incremental-update",
+    "structure":  {
+                      "status":  "pass",
+                      "feature_entries":  3,
+                      "detail_sections":  6
+                  },
+    "semantic":  {
+                     "status":  "pass",
+                     "success_assertions":  [
+                                                {
+                                                    "assertion":  "将最少有效点数从 3 更新为 4，并补充 adapter 验证入口；模块边界、Vue 公开契约和直接公共依赖保持原文",
+                                                    "status":  "pass",
+                                                    "evidence":  "diff 仅包含 last_updated、围栏数据规范化 3→4、adapter 测试入口及必要冲突说明；指定三个章节无内容差异。"
+                                                }
+                                            ],
+                     "blocking_assertions":  [
+                                                 {
+                                                     "assertion":  "不得写入提交历史、caller 事实或无条件重写全文",
+                                                     "status":  "pass",
+                                                     "evidence":  "文档没有提交历史，caller 仍仅作为明确排除项，git diff 证明未无条件重写全文。"
+                                                 }
+                                             ]
+                 },
+    "final_status":  "pass"
+}

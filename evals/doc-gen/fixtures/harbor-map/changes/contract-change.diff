@@ -1,0 +1,24 @@
+diff --git a/packages/shared-ui/src/map-canvas/public.ts b/packages/shared-ui/src/map-canvas/public.ts
+--- a/packages/shared-ui/src/map-canvas/public.ts
++++ b/packages/shared-ui/src/map-canvas/public.ts
+@@ -7,5 +7,6 @@ export type MapZoneCommandResult =
+   | { status: 'success'; count: number }
+   | { status: 'empty' }
++  | { status: 'partial'; count: number; skipped: number }
+   | { status: 'render-error' }
+ 
+ export interface MapCanvasExpose {
+diff --git a/apps/harbor-system/src/components/harbor-map/HarborMap.vue b/apps/harbor-system/src/components/harbor-map/HarborMap.vue
+--- a/apps/harbor-system/src/components/harbor-map/HarborMap.vue
++++ b/apps/harbor-system/src/components/harbor-map/HarborMap.vue
+@@ -53,8 +53,9 @@ async function setZonesVisible(visible: boolean): Promise<HarborZoneResult> {
+     const result = await mapCanvas.replaceZones(zones)
+     if (currentVersion !== requestVersion) return { status: 'superseded' }
+     if (result.status !== 'success') {
+       emit('zoneStatusChange', 'error')
+-      return { status: result.status === 'empty' ? 'empty' : 'render-error' }
++      if (result.status === 'empty') return { status: 'empty' }
++      return { status: 'render-error' }
+     }
+ 
+     emit('zoneStatusChange', 'visible')

@@ -1,0 +1,7 @@
+run_id=20260808-151056-5e5161b
+scenario_id=boundary-generation
+executor=rerun_boundary
+fork_turns=none
+validation_repository_root=baseline
+persisted_before_scoring=true
+temp_cleanup=completed

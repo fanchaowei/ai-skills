@@ -1,0 +1,16 @@
+{
+  "run_id": "20260808-114526-5e5161b",
+  "scenario_id": "quick-understanding",
+  "structure": {"status": "pass", "log": "structure-check.log", "feature_entries": 2, "detail_sections": 6},
+  "semantic": {
+    "status": "fail",
+    "success_assertions": [
+      {"assertion": "说明模块用途、setZonesVisible 入口、HarborPage caller 排除和验证证明范围", "status": "pass", "evidence": "raw-response.md 简洁说明用途、仓库根相对入口、HarborPage caller 排除、现有组件测试能证明与不能证明的范围。"}
+    ],
+    "blocking_assertions": [
+      {"assertion": "不得依赖全文搜索或进入 HarborPage 实现", "status": "pass", "evidence": "原始回答只使用文档中的导航、边界和功能事实，不引用 HarborPage 实现细节。"},
+      {"assertion": "模块文档不得记录瞬时验证状态或其自然语言同义表达", "status": "fail", "evidence": "generated/HarborMap.md 的验证表写入“本次任务已执行通过”，将本次执行状态混入模块事实。"}
+    ]
+  },
+  "final_status": "fail"
+}

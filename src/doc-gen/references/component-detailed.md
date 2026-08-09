@@ -1,73 +1,23 @@
-# {{MODULE_NAME}} - Vue 组件
+# 详细 Vue 组件补充规则
 
-详细组件模板。用于组件组、复杂交互组件或对外暴露较多契约的组件模块。
+适用于组件组、复杂交互组件或公开接口较多的组件。使用通用 v3 骨架，并按需生成状态矩阵、数据流、诊断和删除边界。
 
-## 模块概述
-
-{{MODULE_OVERVIEW}}
-
-## AI 快速接手
-
-{{AI_QUICK_HANDOFF}}
-
-## AI 修改守则
-
-{{AI_CHANGE_RULES}}
-
-## 模块边界
-
-{{MODULE_BOUNDARY}}
-
-## 当前实现契约
-
-本章节承接 YAML `detail_sections.contract`。完整 props、emits、slots 和 expose 只写在正文，不写入 YAML。
+## Vue 公开契约
 
 ### Props
 
-{{PROPS}}
+{{PROPS_OR_NONE}}
 
 ### Emits
 
-{{EVENTS}}
+{{EMITS_OR_NONE}}
 
 ### Slots
 
-{{SLOTS}}
+{{SLOTS_OR_NONE}}
 
 ### Expose
 
-{{EXPOSE_METHODS}}
+{{EXPOSE_OR_NONE}}
 
-## 核心流程
-
-{{MERMAID_FLOW}}
-
-{{FLOW_EXPLANATION}}
-
-## 依赖关系
-
-{{DEPENDENCIES}}
-
-## 影响范围
-
-{{CHANGE_IMPACT_MATRIX}}
-
-## 已验证行为
-
-{{VERIFIED_BEHAVIORS}}
-
-## 修改指南
-
-{{CHANGE_GUIDE}}
-
-## 问题排查路径
-
-{{DEBUGGING_PATHS}}
-
-## 待确认项
-
-{{OPEN_QUESTIONS}}
-
-## 文档维护信息
-
-{{MAINTENANCE_INFO}}
+四类接口必须全部扫描并显式出现；没有公开项时写“无”。只记录目标组件当前公开语义，不记录调用方状态或普通 export。

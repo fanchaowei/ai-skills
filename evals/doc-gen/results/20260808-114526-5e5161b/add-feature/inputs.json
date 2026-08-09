@@ -1,0 +1,9 @@
+{
+  "run_id": "20260808-114526-5e5161b",
+  "scenario_id": "add-feature",
+  "skill_revision": "5e5161b+working-tree-mapping-fix",
+  "input_paths": ["src/doc-gen", "evals/doc-gen/fixtures/harbor-map/baseline", "evals/doc-gen/fixtures/harbor-map/changes/add-feature.diff"],
+  "read_scope": "变化路径、YAML、受影响功能和契约章节",
+  "validation_repository_root": "isolated baseline copy with add-feature.diff applied",
+  "isolation": {"executor": "fresh subagent", "fork_turns": "none", "temp_workspace": "doc-gen-eval-20260808-114526-5e5161b-add-feature"}
+}

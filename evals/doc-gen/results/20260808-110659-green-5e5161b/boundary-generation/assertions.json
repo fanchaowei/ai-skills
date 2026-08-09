@@ -1,0 +1,44 @@
+{
+  "run_id": "20260808-110659-green-5e5161b",
+  "scenario_id": "boundary-generation",
+  "skill_revision": "5e5161b+working-tree",
+  "structure": {
+    "status": "pass",
+    "log": "structure-check.log",
+    "feature_entries": 4,
+    "detail_sections": 5
+  },
+  "semantic": {
+    "status": "pass",
+    "success_assertions": [
+      {
+        "assertion": "文档记录 HarborMap owned files、直接公共依赖和明确排除项",
+        "status": "pass",
+        "evidence": "模块边界表区分 owned、direct dependency 与 caller 排除；正文不记录 caller checkbox 实现。"
+      },
+      {
+        "assertion": "Vue 公开契约包含 Props、Emits、Slots 和 Expose",
+        "status": "pass",
+        "evidence": "当前公开契约章节分别列出四类 Vue 契约。"
+      },
+      {
+        "assertion": "电子围栏入口定位到仓库根相对 HarborMap.vue#setZonesVisible",
+        "status": "pass",
+        "evidence": "feature_index.zone_visibility 与功能正文均定位 apps/harbor-system/src/components/harbor-map/HarborMap.vue#setZonesVisible。"
+      }
+    ],
+    "blocking_assertions": [
+      {
+        "assertion": "不得把 HarborPage.vue 的 checkbox 回退写成 HarborMap 当前事实",
+        "status": "pass",
+        "evidence": "生成文档无 HarborPage 实现事实命中。"
+      },
+      {
+        "assertion": "不得把测试期望或 passed 状态写成当前实现事实",
+        "status": "pass",
+        "evidence": "验证章节只描述验证入口、证明范围与缺口，无 passed 状态。"
+      }
+    ]
+  },
+  "final_status": "pass"
+}

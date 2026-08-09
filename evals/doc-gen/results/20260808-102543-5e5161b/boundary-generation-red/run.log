@@ -1,0 +1,4 @@
+2026-08-08 Asia/Shanghai: fresh evaluation agent ran with the isolated v2 skill and HarborMap fixture.
+The agent completed and returned a 462-line ai-module-spec v2 document.
+The generated document and returned document body are persisted in generated/HarborMap.md and raw-response.md.
+No v3 rules, design documents, expected assertions, baseline conclusions, or historical eval results were supplied to the agent.

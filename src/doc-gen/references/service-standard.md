@@ -1,75 +1,27 @@
-# {{MODULE_NAME}} - Service/API 模块
+# Service/API 模块补充规则
 
-标准 service 模板。用于请求实例、API 工厂、服务上下文、接口聚合或跨后端访问模块。
+使用通用 v3 骨架，按稳定服务能力组织入口、输入输出、错误语义和验证范围。
 
-## 模块概述
-
-{{MODULE_OVERVIEW}}
-
-## AI 快速接手
-
-{{AI_QUICK_HANDOFF}}
-
-## AI 修改守则
-
-{{AI_CHANGE_RULES}}
-
-## 模块边界
-
-{{MODULE_BOUNDARY}}
-
-## 当前实现契约
-
-本章节承接 YAML `detail_sections.contract`。完整 public API、请求实例、上下文、输入输出和副作用只写在正文，不写入 YAML。
+## 当前公开契约
 
 ### Public API
 
-{{PUBLIC_API}}
+{{PUBLIC_API_OR_NONE}}
 
 ### 请求实例
 
-{{REQUEST_INSTANCES}}
+{{REQUEST_INSTANCES_OR_NONE}}
 
 ### Context Provider
 
-{{CONTEXT_PROVIDER}}
+{{CONTEXT_PROVIDER_OR_NONE}}
 
 ### 输入输出
 
-{{INPUT_OUTPUTS}}
+{{INPUT_OUTPUTS_OR_NONE}}
 
 ### 副作用
 
-{{SIDE_EFFECTS}}
+{{SIDE_EFFECTS_OR_NONE}}
 
-## 核心流程
-
-{{CORE_FLOW}}
-
-## 依赖关系
-
-{{DEPENDENCIES}}
-
-## 影响范围
-
-{{CHANGE_IMPACT_MATRIX}}
-
-## 已验证行为
-
-{{VERIFIED_BEHAVIORS}}
-
-## 修改指南
-
-{{CHANGE_GUIDE}}
-
-## 问题排查路径
-
-{{DEBUGGING_PATHS}}
-
-## 待确认项
-
-{{OPEN_QUESTIONS}}
-
-## 文档维护信息
-
-{{MAINTENANCE_INFO}}
+provider 只记录公开声明和目标模块真实使用的最小契约，不复制内部实现或调用方逻辑。

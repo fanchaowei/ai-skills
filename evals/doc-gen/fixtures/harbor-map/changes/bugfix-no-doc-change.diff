@@ -1,0 +1,11 @@
+diff --git a/apps/harbor-system/src/components/harbor-map/HarborMap.vue b/apps/harbor-system/src/components/harbor-map/HarborMap.vue
+--- a/apps/harbor-system/src/components/harbor-map/HarborMap.vue
++++ b/apps/harbor-system/src/components/harbor-map/HarborMap.vue
+@@ -33,6 +33,7 @@ async function setZonesVisible(visible: boolean): Promise<HarborZoneResult> {
+       emit('zoneStatusChange', 'hidden')
+       return { status: 'success', count: 0 }
+     } catch {
++      if (currentVersion !== requestVersion) return { status: 'superseded' }
+       emit('zoneStatusChange', 'error')
+       return { status: 'render-error' }
+     }

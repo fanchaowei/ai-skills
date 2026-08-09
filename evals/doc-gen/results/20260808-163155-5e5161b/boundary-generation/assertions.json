@@ -1,0 +1,42 @@
+﻿{
+    "run_id":  "20260808-163155-5e5161b",
+    "scenario_id":  "boundary-generation",
+    "structure":  {
+                      "status":  "pass",
+                      "feature_entries":  4,
+                      "detail_sections":  6
+                  },
+    "semantic":  {
+                     "status":  "pass",
+                     "success_assertions":  [
+                                                {
+                                                    "assertion":  "文档记录 owned、直接公共依赖和明确排除项",
+                                                    "status":  "pass",
+                                                    "evidence":  "模块边界表标记 owned/direct-public-dependency，并明确将 HarborPage.vue 作为 caller 排除。"
+                                                },
+                                                {
+                                                    "assertion":  "Vue 公开契约包含 Props、Emits、Slots 和 Expose",
+                                                    "status":  "pass",
+                                                    "evidence":  "当前公开契约下四个三级标题全部存在。"
+                                                },
+                                                {
+                                                    "assertion":  "电子围栏入口定位到 HarborMap.vue#setZonesVisible",
+                                                    "status":  "pass",
+                                                    "evidence":  "feature_index 的 zone_visibility 指向仓库根相对 HarborMap.vue#setZonesVisible。"
+                                                }
+                                            ],
+                     "blocking_assertions":  [
+                                                 {
+                                                     "assertion":  "不写 HarborPage checkbox 回退事实",
+                                                     "status":  "pass",
+                                                     "evidence":  "HarborPage 仅作为排除项出现，正文无 checkbox 或页面回退实现。"
+                                                 },
+                                                 {
+                                                     "assertion":  "不把测试期望或瞬时状态写成当前实现",
+                                                     "status":  "pass",
+                                                     "evidence":  "验证章节区分预期覆盖与当前事实，正文无 passed/failed/not_run/blocked。"
+                                                 }
+                                             ]
+                 },
+    "final_status":  "pass"
+}

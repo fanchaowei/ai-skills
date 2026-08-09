@@ -1,0 +1,13 @@
+﻿run_id=20260808-163155-5e5161b
+scenario_id=no-update-refactor
+skill_snapshot_sha256=3acad42ccd1e0a74cdf5c82721c7762f1b0af184cbd32bb7278e433018277b48
+executor=fresh subagent
+fork_turns=none
+temp_workspace=G:\Users\FANCHA~1\AppData\Local\Temp\doc-gen-eval-20260808-163155-5e5161b-no-update-refactor
+document_expected=false
+scenario_diff_sha256=22c1bb4b50f77c79b62948537ed3bd20b9e2af3b7c72e6467a3d4eb1c11ccfb3
+git_apply_check_exit_code=0
+git_apply_exit_code=0
+persisted_before_scoring=true
+temp_cleanup=pending
+diff_apply_repository_root=G:\Users\FANCHA~1\AppData\Local\Temp\doc-gen-eval-20260808-163155-5e5161b-no-update-refactor\diff-audit\repository
