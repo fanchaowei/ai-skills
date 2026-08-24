@@ -1,0 +1,45 @@
+{
+  "skill_name": "wiki-library",
+  "skill_path": "src/wiki-library",
+  "baseline_skill_path": "src/wiki-ingest",
+  "evals": [
+    {
+      "id": "ordinary-source-regression",
+      "prompt": "将提供的普通笔记编译到一个新的 wiki 目录。",
+      "files": [
+        "evals/wiki-library/fixtures/ordinary/notes.md"
+      ],
+      "success_assertions": [
+        "沿用原四类实体、模板、index、log 和双链规则",
+        "与旧 wiki-ingest 的知识实体选择和页面结构等价"
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "single-authoritative-module",
+      "prompt": "将提供的模块文档加入一个新的 wiki 目录。",
+      "files": [
+        "evals/wiki-library/fixtures/single-module"
+      ],
+      "success_assertions": [
+        "识别 claudedocs 与 doc_type: ai-module-spec",
+        "提供可解析的源文档相对链接",
+        "不大段复述公开契约、文件清单、测试证据或风险矩阵"
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "multi-module-synthesis",
+      "prompt": "将提供的两个模块文档编译成 wiki，提炼它们共同构成的知识实体。",
+      "files": [
+        "evals/wiki-library/fixtures/multi-module"
+      ],
+      "success_assertions": [
+        "综合实体仍归入 concepts/products/patterns/comparisons 之一",
+        "链接两份权威模块文档",
+        "没有新增 Wiki 目录、页面类型或日志字段"
+      ],
+      "status": "not_run"
+    }
+  ]
+}
